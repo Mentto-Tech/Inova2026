@@ -1,0 +1,329 @@
+.empresa-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--bg);
+}
+
+.empresa-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 2rem;
+}
+
+.empresa-hero-left .logo-top {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.empresa-hero-left h1 {
+  font-size: 2rem;
+  text-align: left;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.empresa-hero-left h1 .accent {
+  color: var(--accent);
+}
+
+.empresa-hero-left .lead {
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 400;
+}
+
+.empresa-hero-left .lead strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.empresa-hero-left .cta {
+  width: fit-content;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #5fe0ff, var(--text-secondary));
+  color: #010624;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 20px rgba(95, 224, 255, 0.3);
+  margin-top: 1rem;
+}
+
+.empresa-hero-left .cta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(95, 224, 255, 0.5);
+}
+
+.empresa-hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empresa-video-frame {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 255, 255, 0.2);
+}
+
+.empresa-video-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .empresa-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .empresa-hero-left {
+    padding-left: 0;
+  }
+
+  .empresa-hero-left h1 {
+    font-size: 2.5rem;
+  }
+
+  .empresa-hero-left .lead {
+    font-size: 1rem;
+  }
+
+  .empresa-video-frame {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .empresa-hero {
+    padding: 2rem 1rem;
+  }
+
+  .empresa-hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .empresa-hero-left .lead {
+    font-size: 0.95rem;
+  }
+
+  .empresa-hero-left .cta {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+/* Empresa Inscription Form Styles */
+.empresa-inscription {
+  background: var(--bg);
+  padding: 4rem 2rem;
+  color: var(--text-primary);
+}
+
+.empresa-inscription-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.empresa-inscription-container h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.inscription-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin: 0 0 3rem 0;
+  font-size: 1rem;
+}
+
+.empresa-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.form-row-single {
+  grid-template-columns: 1fr;
+  max-width: 100%;
+  margin: 0 auto;
+  min-width: 10rem;
+}
+
+.form-row-single .form-group {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.8rem 1.2rem;
+  border: 2px solid var(--text-secondary);
+  border-radius: 25px;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 0.95rem;
+  transition: all 260ms ease;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.form-group select {
+  cursor: pointer;
+  background-color: transparent;
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2300ffff' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+}
+
+.form-checkbox-empresa {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.form-checkbox-empresa input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--cyan);
+  border: 2px solid var(--cyan);
+  border-radius: 4px;
+}
+
+.form-checkbox-empresa label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin: 0;
+}
+
+.link-termos {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: text-decoration 260ms ease;
+}
+
+.link-termos:hover {
+  text-decoration: underline;
+}
+
+.form-submit {
+  background: linear-gradient(90deg, #5fe0ff, var(--text-secondary));
+  color: #010624;
+  border: none;
+  padding: 0.8rem 4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 20px rgba(95, 224, 255, 0.3);
+  margin: 1.5rem auto 0;
+  display: block;
+  width: 60%;
+  max-width: 400px;
+}
+
+.form-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(95, 224, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+  .empresa-inscription-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-row-single {
+    max-width: 100%;
+    min-width: 10rem;
+  }
+
+  .empresa-inscription {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .empresa-inscription {
+    padding: 2rem 1rem;
+  }
+
+  .empresa-inscription-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .form-submit {
+    padding: 0.7rem 2rem;
+    font-size: 0.9rem;
+  }
+}
