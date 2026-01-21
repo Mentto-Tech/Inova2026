@@ -8,6 +8,52 @@ import useScrollAnimation from '../hooks/useScrollAnimation'
 import { subscribeEmpresa } from '../api/action_empresa'
 import imagemCentro from '../assets/imagens/imagemCentro.png'
 
+const digitsOnly = (value = '') => value.replace(/\D+/g, '')
+
+const isValidEmail = (email = '') => /.+@.+\..+/.test(email.trim().toLowerCase())
+
+const isValidPhone = (phone = '') => {
+  const digits = digitsOnly(phone)
+  return digits.length >= 10 && digits.length <= 12
+}
+
+const isOnlyDigits = (value = '') => /^\d+$/.test(value.trim())
+
+const isValidCNPJ = (value = '') => {
+  const cnpj = digitsOnly(value)
+  if (cnpj.length !== 14) return false
+  if (/^(\d)\1+$/.test(cnpj)) return false
+
+  const calcDigit = (base) => {
+    let sum = 0
+    let pos = base.length - 7
+    for (let i = base.length; i >= 1; i -= 1) {
+      sum += Number(base.charAt(base.length - i)) * pos
+      pos -= 1
+      if (pos < 2) pos = 9
+    }
+    const result = sum % 11
+    return result < 2 ? 0 : 11 - result
+  }
+
+  const base = cnpj.slice(0, 12)
+  const digit1 = calcDigit(base)
+  const digit2 = calcDigit(base + digit1)
+  return cnpj === base + String(digit1) + String(digit2)
+}
+
+const sanitizeEmpresa = (data) => ({
+  nome: data.nome.trim(),
+  email: data.email.trim(),
+  telefone: data.telefone.trim(),
+  cargo: data.cargo.trim(),
+  empresa: data.empresa.trim(),
+  ramo: data.ramo.trim(),
+  cnpj: data.cnpj.trim(),
+  porte: data.porte.trim(),
+  associada: data.associada.trim(),
+})
+
 export default function Empresa() {
   const heroRef = useScrollAnimation()
   const inscriptionRef = useScrollAnimation()
@@ -40,8 +86,64 @@ export default function Empresa() {
     setError('')
     setSuccess(false)
 
+    const sanitized = sanitizeEmpresa(formData)
+
+    if (isOnlyDigits(sanitized.nome)) {
+      setError('Nome não pode conter apenas números.')
+      setLoading(false)
+      return
+    }
+
+    if (isOnlyDigits(sanitized.cargo)) {
+      setError('Cargo não pode conter apenas números.')
+      setLoading(false)
+      return
+    }
+
+    if (isOnlyDigits(sanitized.empresa)) {
+      setError('Nome da empresa não pode conter apenas números.')
+      setLoading(false)
+      return
+    }
+
+    if (isOnlyDigits(sanitized.ramo)) {
+      setError('Ramo de atuação não pode conter apenas números.')
+      setLoading(false)
+      return
+    }
+
+    if (!isValidEmail(sanitized.email)) {
+      setError('Informe um e-mail válido.')
+      setLoading(false)
+      return
+    }
+
+    if (!isValidPhone(sanitized.telefone)) {
+      setError('Informe um telefone/WhatsApp com DDD.')
+      setLoading(false)
+      return
+    }
+
+    if (!isValidCNPJ(sanitized.cnpj)) {
+      setError('Informe um CNPJ válido (14 dígitos).')
+      setLoading(false)
+      return
+    }
+
+    if (!sanitized.porte) {
+      setError('Selecione o porte da empresa.')
+      setLoading(false)
+      return
+    }
+
+    if (!sanitized.associada) {
+      setError('Selecione a associação.')
+      setLoading(false)
+      return
+    }
+
     try {
-      await subscribeEmpresa(formData)
+      await subscribeEmpresa(sanitized)
       setSuccess(true)
       setFormData({
         nome: '',
@@ -89,7 +191,7 @@ export default function Empresa() {
         </div>
 
         <div className="empresa-hero-right">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/xasiaxZXrfw?si=4f-yYaqOhywpvhee" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/xasiaxZXrfw?si=4f-yYaqOhywpvhee" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
       </section>
 

@@ -332,7 +332,7 @@
   border: 2px solid var(--cyan);
   border-radius: 25px;
   background: transparent;
-  color: var(--text-primary);
+  color: white;
   font-family: 'Poppins', system-ui, sans-serif;
   font-size: 0.95rem;
   transition: all 260ms ease;
@@ -345,6 +345,7 @@
 }
 
 .form-row-single input {
+  color: white;
   max-width: 100%;
   width: 100%;
   box-sizing: border-box;
@@ -356,6 +357,7 @@
 
 .form-group input:focus {
   outline: none;
+  color: white;
   border-color: var(--cyan);
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
 }

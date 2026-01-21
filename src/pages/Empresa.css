@@ -269,11 +269,8 @@ body:has(.empresa-hero) .empresa-inscription {
 .form-group select:focus {
   outline: none;
   border-color: var(--cyan);
+  color: var(--text-primary);
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-}
-
-.form-group input:focus {
-  color: black;
 }
 
 .form-group select:focus {

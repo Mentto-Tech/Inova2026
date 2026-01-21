@@ -15,6 +15,46 @@ import icon4 from '../assets/icones/image 394.svg'
 import icon5 from '../assets/icones/image 395.svg'
 import footer from '../assets/pages/footer.png'
 
+const digitsOnly = (value = '') => value.replace(/\D+/g, '')
+
+const isValidEmail = (email = '') => /.+@.+\..+/.test(email.trim().toLowerCase())
+
+const isValidPhone = (phone = '') => {
+  const digits = digitsOnly(phone)
+  return digits.length >= 10 && digits.length <= 12
+}
+
+const isOnlyDigits = (value = '') => /^\d+$/.test(value.trim())
+
+const isValidCPF = (value = '') => {
+  const cpf = digitsOnly(value)
+  if (cpf.length !== 11) return false
+  if (/^(\d)\1+$/.test(cpf)) return false
+
+  const calcDigit = (base, factor) => {
+    let sum = 0
+    for (let i = 0; i < base.length; i += 1) {
+      sum += Number(base.charAt(i)) * (factor - i)
+    }
+    const result = (sum * 10) % 11
+    return result === 10 ? 0 : result
+  }
+
+  const digit1 = calcDigit(cpf.slice(0, 9), 10)
+  const digit2 = calcDigit(cpf.slice(0, 10), 11)
+  return cpf === cpf.slice(0, 9) + String(digit1) + String(digit2)
+}
+
+const sanitizeAluno = (data) => ({
+  nome: data.nome.trim(),
+  email: data.email.trim(),
+  telefone: data.telefone.trim(),
+  instituicao: data.instituicao.trim(),
+  curso: data.curso.trim(),
+  termo: data.termo.trim(),
+  cpf: data.cpf.trim(),
+})
+
 
 export default function Aluno() {
   const heroRef = useScrollAnimation()
@@ -48,8 +88,52 @@ export default function Aluno() {
     setError('')
     setSuccess(false)
 
+    const sanitized = sanitizeAluno(formData)
+
+    if (isOnlyDigits(sanitized.nome)) {
+      setError('Nome não pode conter apenas números.')
+      setLoading(false)
+      return
+    }
+
+    if (isOnlyDigits(sanitized.instituicao)) {
+      setError('Instituição não pode conter apenas números.')
+      setLoading(false)
+      return
+    }
+
+    if (isOnlyDigits(sanitized.curso)) {
+      setError('Curso não pode conter apenas números.')
+      setLoading(false)
+      return
+    }
+
+    if (isOnlyDigits(sanitized.termo)) {
+      setError('Termo não pode conter apenas números.')
+      setLoading(false)
+      return
+    }
+
+    if (!isValidEmail(sanitized.email)) {
+      setError('Informe um e-mail válido.')
+      setLoading(false)
+      return
+    }
+
+    if (!isValidPhone(sanitized.telefone)) {
+      setError('Informe um telefone/WhatsApp com DDD.')
+      setLoading(false)
+      return
+    }
+
+    if (!isValidCPF(sanitized.cpf)) {
+      setError('Informe um CPF válido (11 dígitos).')
+      setLoading(false)
+      return
+    }
+
     try {
-      await subscribeAluno(formData)
+      await subscribeAluno(sanitized)
       setSuccess(true)
       setFormData({
         nome: '',
