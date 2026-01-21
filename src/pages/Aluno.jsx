@@ -372,7 +372,7 @@ export default function Aluno() {
             <div className="form-checkbox">
               <input type="checkbox" id="termos" name="termos" required />
               <label htmlFor="termos">
-                Lí e concordo com os <a href="#" className="link-termos">termos de Uso e Políticas de Privacidade</a>
+                Lí e concordo com os <a href="https://mentto.com.br/termos-de-uso-e-politicas-de-privacidade" className="link-termos">termos e Políticas de Privacidade</a>
               </label>
             </div>
 

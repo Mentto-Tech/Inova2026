@@ -348,7 +348,7 @@ export default function Empresa() {
             <div className="form-checkbox-empresa">
               <input type="checkbox" id="termos" name="termos" required />
               <label htmlFor="termos">
-                Declaro que li e aceito os <a href="#" className="link-termos">Termos de Uso e Políticas de Privacidade</a>
+                Declaro que li e aceito os <a href="https://mentto.com.br/termos-de-uso-e-politicas-de-privacidade" className="link-termos">Termos de Uso e Políticas de Privacidade</a>
               </label>
             </div>
 
