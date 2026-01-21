@@ -28,7 +28,9 @@ body:has(.empresa-hero) .empresa-inscription {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  padding: 4rem 1.75rem;
+  padding-top: 1rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
   max-width: none;
   margin: 0;
   background: var(--bg);
@@ -43,8 +45,8 @@ body:has(.empresa-hero) .empresa-inscription {
 }
 
 .empresa-hero-left .logo-top {
-  width: 200px;
-  height: auto;
+  width: 210px;
+  height: 60px;
   margin-bottom: 1rem;
 }
 
@@ -97,6 +99,7 @@ body:has(.empresa-hero) .empresa-inscription {
 }
 
 .empresa-hero-right {
+  margin-top: -1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,14 +107,14 @@ body:has(.empresa-hero) .empresa-inscription {
 
 .empresa-video-frame {
   width: 100%;
-  max-width: 500px;
+  max-width: 200px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 255, 255, 0.2);
 }
 
 .empresa-video-frame img {
-  width: 100%;
+  width: 90%;
   height: auto;
   display: block;
 }
