@@ -1,14 +1,12 @@
 export const subscribeAluno = async (formData) => {
-  const API_KEY = import.meta.env.VITE_MAILERLITE_API_KEY;
   const GROUP_ID = "177207453211952799";
 
   try {
-    const response = await fetch("https://connect.mailerlite.com/api/subscribers", {
+    const response = await fetch("/api/subscribe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "Authorization": `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
         email: formData.email,
