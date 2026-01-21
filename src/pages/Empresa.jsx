@@ -1,16 +1,65 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import footer from '../assets/pages/footer.png'
 import Logo from '../assets/inovaskill/LogoInova.svg'
 import trilhas2 from '../assets/pages/trilhas2.png'
 import '../animations.css'
 import './Empresa.css'
 import useScrollAnimation from '../hooks/useScrollAnimation'
+import { subscribeEmpresa } from '../api/action_empresa'
 import imagemCentro from '../assets/imagens/imagemCentro.png'
 
 export default function Empresa() {
   const heroRef = useScrollAnimation()
   const inscriptionRef = useScrollAnimation()
   const trilhasRef = useScrollAnimation()
+
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    telefone: '',
+    cargo: '',
+    empresa: '',
+    ramo: '',
+    cnpj: '',
+    porte: '',
+    associada: '',
+  })
+
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+    setSuccess(false)
+
+    try {
+      await subscribeEmpresa(formData)
+      setSuccess(true)
+      setFormData({
+        nome: '',
+        email: '',
+        telefone: '',
+        cargo: '',
+        empresa: '',
+        ramo: '',
+        cnpj: '',
+        porte: '',
+        associada: '',
+      })
+    } catch (err) {
+      setError(err.message || 'Ocorreu um erro ao enviar os dados da empresa. Tente novamente.')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -70,48 +119,103 @@ export default function Empresa() {
           <h2>Inscreva sua Empresa Abaixo:</h2>
           <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
 
-          <form className="empresa-form">
+          <form className="empresa-form" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="nome">Seu nome completo:</label>
-                <input type="text" id="nome" name="nome" required />
+                <input 
+                  type="text" 
+                  id="nome" 
+                  name="nome" 
+                  value={formData.nome}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="email">E-mail para contato:</label>
-                <input type="email" id="email" name="email" required />
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  value={formData.email}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="telefone">Telefone/WhatsApp:</label>
-                <input type="tel" id="telefone" name="telefone" required />
+                <input 
+                  type="tel" 
+                  id="telefone" 
+                  name="telefone" 
+                  value={formData.telefone}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="cargo">Cargo:</label>
-                <input type="text" id="cargo" name="cargo" required />
+                <input 
+                  type="text" 
+                  id="cargo" 
+                  name="cargo" 
+                  value={formData.cargo}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="empresa">Nome da empresa:</label>
-                <input type="text" id="empresa" name="empresa" required />
+                <input 
+                  type="text" 
+                  id="empresa" 
+                  name="empresa" 
+                  value={formData.empresa}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="ramo">Ramo de atuação da empresa:</label>
-                <input type="text" id="ramo" name="ramo" required />
+                <input 
+                  type="text" 
+                  id="ramo" 
+                  name="ramo" 
+                  value={formData.ramo}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="cnpj">CNPJ:</label>
-                <input type="text" id="cnpj" name="cnpj" required />
+                <input 
+                  type="text" 
+                  id="cnpj" 
+                  name="cnpj" 
+                  value={formData.cnpj}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="porte">Porte da empresa:</label>
-                <select id="porte" name="porte" required>
+                <select 
+                  id="porte" 
+                  name="porte" 
+                  value={formData.porte}
+                  onChange={handleChange}
+                  required
+                >
                   <option value="">Selecione</option>
                   <option value="micro">Microempresa</option>
                   <option value="pequena">Pequena Empresa</option>
@@ -124,7 +228,13 @@ export default function Empresa() {
             <div className="form-row form-row-single">
               <div className="form-group">
                 <label htmlFor="associada">Associada a:</label>
-                <select id="associada" name="associada" required>
+                <select 
+                  id="associada" 
+                  name="associada" 
+                  value={formData.associada}
+                  onChange={handleChange}
+                  required
+                >
                   <option value="">Selecione</option>
                   <option value="CIESP">CIESP</option>
                   <option value="ADIPA">ADIPA</option>
@@ -140,7 +250,12 @@ export default function Empresa() {
               </label>
             </div>
 
-            <button type="submit" className="form-submit">ENVIAR</button>
+            {success && <p className="success-message">Inscrição da empresa realizada com sucesso!</p>}
+            {error && <p className="error-message">{error}</p>}
+
+            <button type="submit" className="form-submit" disabled={loading}>
+              {loading ? 'ENVIANDO...' : 'ENVIAR'}
+            </button>
           </form>
         </div>
       </section>

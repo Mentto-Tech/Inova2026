@@ -1,8 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import '../App.css'
 import '../animations.css'
 import './Aluno.css'
 import useScrollAnimation from '../hooks/useScrollAnimation'
+import { subscribeAluno } from '../api/action_aluno'
 import bolsa from '../assets/imagens/bolsa.png'
 import trilhas2 from '../assets/pages/trilhas2.png'
 import Logo from '../assets/inovaskill/LogoInova.svg'
@@ -21,6 +22,50 @@ export default function Aluno() {
   const bolsaRef = useScrollAnimation()
   const trilhasRef = useScrollAnimation()
   const inscriptionRef = useScrollAnimation()
+
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    telefone: '',
+    instituicao: '',
+    curso: '',
+    termo: '',
+    cpf: '',
+  })
+
+  const [loading, setLoading] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+    setSuccess(false)
+
+    try {
+      await subscribeAluno(formData)
+      setSuccess(true)
+      setFormData({
+        nome: '',
+        email: '',
+        telefone: '',
+        instituicao: '',
+        curso: '',
+        termo: '',
+        cpf: '',
+      })
+    } catch (err) {
+      setError(err.message || 'Ocorreu um erro ao enviar seus dados. Tente novamente.')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -139,43 +184,93 @@ export default function Aluno() {
           <h2>Inscreva-se Abaixo:</h2>
           <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
 
-          <form className="aluno-form">
+          <form className="aluno-form" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="nome">Seu nome completo:</label>
-                <input type="text" id="nome" name="nome" required />
+                <input 
+                  type="text" 
+                  id="nome" 
+                  name="nome" 
+                  value={formData.nome}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="email">E-mail para contato:</label>
-                <input type="email" id="email" name="email" required />
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  value={formData.email}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="telefone">Telefone/WhatsApp:</label>
-                <input type="tel" id="telefone" name="telefone" required />
+                <input 
+                  type="tel" 
+                  id="telefone" 
+                  name="telefone" 
+                  value={formData.telefone}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="instituicao">Instituição de ensino:</label>
-                <input type="text" id="instituicao" name="instituicao" required />
+                <input 
+                  type="text" 
+                  id="instituicao" 
+                  name="instituicao" 
+                  value={formData.instituicao}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="curso">Curso:</label>
-                <input type="text" id="curso" name="curso" required />
+                <input 
+                  type="text" 
+                  id="curso" 
+                  name="curso" 
+                  value={formData.curso}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="termo">Termo:</label>
-                <input type="text" id="termo" name="termo" required />
+                <input 
+                  type="text" 
+                  id="termo" 
+                  name="termo" 
+                  value={formData.termo}
+                  onChange={handleChange}
+                  required 
+                />
               </div>
             </div>
 
             <div className="form-group form-row-single">
               <label htmlFor="cpf">CPF:</label>
-              <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required />
+              <input 
+                type="text" 
+                id="cpf" 
+                name="cpf" 
+                placeholder="000.000.000-00" 
+                value={formData.cpf}
+                onChange={handleChange}
+                required 
+              />
             </div>
 
             <div className="cpf-info">
@@ -197,7 +292,12 @@ export default function Aluno() {
               </label>
             </div>
 
-            <button type="submit" className="form-submit">ENVIAR</button>
+            {success && <p className="success-message">Inscrição realizada com sucesso!</p>}
+            {error && <p className="error-message">{error}</p>}
+
+            <button type="submit" className="form-submit" disabled={loading}>
+              {loading ? 'ENVIANDO...' : 'ENVIAR'}
+            </button>
           </form>
         </div>
       </section>
