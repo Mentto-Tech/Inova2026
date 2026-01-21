@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
-import inovacaoetrilha from '../assets/Pages/inovacaoetrilha.png'
-import footer from '../assets/Pages/footer.png'
+import inovacaoetrilha from '../assets/pages/inovacaoetrilha.png'
+import footer from '../assets/pages/footer.png'
 import Logo from '../assets/inovaskill/LogoInova.svg'
 import '../animations.css'
 import './Empresa.css'
 import useScrollAnimation from '../hooks/useScrollAnimation'
+import imagemCentro from '../assets/imagens/imagemCentro.png'
 
 export default function Empresa() {
   const heroRef = useScrollAnimation()
@@ -43,8 +44,21 @@ export default function Empresa() {
         </div>
       </section>
 
-      <section className='organizacoes animate-fade-in-up' ref={inovacaoRef}>
-        <img src={inovacaoetrilha} alt="Inovação e Trilhas" style={{ width: '100%' }} />
+      <section className="inovacao-aberta animate-fade-in-up">
+        <div className="inovacao-container">
+          <h2>Programa de Inovação Aberta</h2>
+          <p className="inovacao-subtitle">Uma jornada que <strong>conecta problemas reais a soluções tecnológicas validadas.</strong></p>
+
+          <img src={imagemCentro} alt="Jornada de Inovação" className="inovacao-image" />
+
+          <p className="inovacao-text">
+            O InovaSkill conduz os participantes da <strong>identificação do problema até a validação da solução</strong>, transformando ideias em MVPs testados em contextos reais. Todo o cronograma representa essa jornada, com atividades, mentorias e entregas focadas em <strong>validar o que realmente gera valor.</strong>
+          </p>
+
+          <p className="inovacao-text">
+            A partir daí, os projetos podem <strong>seguir novos caminhos</strong>, como aceleração, institucionalização, investimento ou outras trilhas de crescimento. Essas etapas são <strong>possibilidades futuras, fora do escopo principal do InovaSkill.</strong>
+          </p>
+        </div>
       </section>
 
       <section className="empresa-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
@@ -127,7 +141,7 @@ export default function Empresa() {
       </section>
 
       <section className='footer'>
-        <img src={footer} alt="footer" style={{ width: '100%' }} />
+        <img src={footer} alt="footer" />
       </section>
     </>
   )

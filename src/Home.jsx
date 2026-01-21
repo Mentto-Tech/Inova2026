@@ -3,14 +3,13 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import useScrollAnimation from './hooks/useScrollAnimation'
 import Logo from './assets/inovaskill/LogoInova.svg'
-import HeroImg from './assets/inovaskill/image.svg'
 import Icon1 from './assets/Footerpage1/Vector-3.svg'
 import Icon2 from './assets/Footerpage1/Vector.svg'
 import Icon3 from './assets/Footerpage1/Vector-1.svg'
 import Icon4 from './assets/Footerpage1/Vector-2.svg'
-import organizacoes from './assets/Pages/organizacoesparceiras.png'
-import footer from './assets/Pages/footer.png'
-import brainImg from './assets/Imagens/brain.png'
+import organizacoes from './assets/pages/organizacoesparceiras.png'
+import footer from './assets/pages/footer.png'
+import brainImg from './assets/imagens/brain.png'
 import icon1 from './assets/icones/image 391.svg'
 import icon2 from './assets/icones/image 392.svg'
 import icon3 from './assets/icones/image 393.svg'
@@ -190,7 +189,7 @@ export default function Home() {
       </section>
 
       <section className='organizacoes animate-fade-in-up' ref={organizacoesRef}>
-        <img src={organizacoes} alt="Organizações Parceiras" style={{ width: '100%' }} />
+        <img src={organizacoes} alt="Organizações Parceiras" />
       </section>
 
       <section className="inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
@@ -217,7 +216,7 @@ export default function Home() {
       </section>
 
       <section className='footer'>
-        <img src={footer} alt="Footer" style={{ width: '100%' }} />
+        <img src={footer} alt="Footer" />
       </section>
 
     </div>

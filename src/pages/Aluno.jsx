@@ -4,7 +4,7 @@ import '../animations.css'
 import './Aluno.css'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 import bolsa from '../assets/imagens/bolsa.png'
-import trilhas2 from '../assets/Pages/trilhas2.png'
+import trilhas2 from '../assets/pages/trilhas2.png'
 import Logo from '../assets/inovaskill/LogoInova.svg'
 import hugo from '../assets/pages/hugo.png'
 import icon1 from '../assets/icones/image 391.svg'
@@ -12,7 +12,7 @@ import icon2 from '../assets/icones/image 392.svg'
 import icon3 from '../assets/icones/image 393.svg'
 import icon4 from '../assets/icones/image 394.svg'
 import icon5 from '../assets/icones/image 395.svg'
-import footer from '../assets/Pages/footer.png'
+import footer from '../assets/pages/footer.png'
 
 
 export default function Aluno() {
@@ -128,7 +128,7 @@ export default function Aluno() {
       </section>
 
       <section className='datasbolsatrilha animate-fade-in-up' ref={trilhasRef}>
-        <img src={trilhas2} alt="Trilhas" style={{ width: '100%' }} />
+        <img src={trilhas2} alt="Trilhas" />
       </section>
 
       <section className="aluno-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
@@ -200,7 +200,7 @@ export default function Aluno() {
       </section>
 
       <section className='footer'>
-        <img src={footer} alt="footer" style={{ width: '100%' }} />
+        <img src={footer} alt="footer" />
       </section>
     </div>
   )

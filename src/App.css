@@ -188,7 +188,6 @@
   .video-frame { height: 200px; max-width: 100%; }
 }
 
-/* Features strip below hero */
 .features {
   margin-top: 4.5rem;
   background: #ffffff;
@@ -249,6 +248,195 @@
     align-items: stretch;
   }
   .feature-item { justify-content: flex-start; }
+}
+
+/* Inovação Aberta Section */
+.inovacao-aberta {
+  background: white;
+  padding: 4rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  
+  box-sizing: border-box;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow-x: hidden;
+}
+
+.inovacao-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inovacao-aberta h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.inovacao-subtitle {
+  font-size: 1.1rem;
+  color: black;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.inovacao-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.inovacao-box {
+  padding: 2rem;
+  border-radius: 24px;
+  border: 3px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-skill {
+  border-color: var(--cyan);
+  background: rgba(95, 224, 255, 0.1);
+}
+
+.box-skill h3 {
+  color: var(--text-secondary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.box-skill p {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.box-acelera {
+  border-color: #00cc66;
+  background: rgba(0, 204, 102, 0.1);
+}
+
+.box-acelera h3 {
+  color: #00cc66;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+}
+
+.box-acelera p {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.inovacao-timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  background: linear-gradient(90deg, var(--text-secondary), #00cc66);
+  padding: 1rem;
+  border-radius: 50px;
+  font-weight: 700;
+  color: white;
+}
+
+.timeline-item {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.timeline-item:not(:last-child)::after {
+  content: '';
+  width: 1.5rem;
+  height: 2px;
+  background: white;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+.inovacao-image {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+.inovacao-text {
+  color: black;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inovacao-text strong {
+  font-weight: 600;
+  color: #000000;
+}
+
+@media (max-width: 1024px) {
+  .inovacao-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .inovacao-aberta h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .inovacao-aberta {
+    padding: 2rem 1rem;
+  }
+
+  .inovacao-aberta h2 {
+    font-size: 1.8rem;
+  }
+
+  .inovacao-subtitle {
+    font-size: 1rem;
+  }
+
+  .inovacao-box h3 {
+    font-size: 1.4rem;
+  }
+
+  .inovacao-timeline {
+    gap: 0;
+    padding: 0.8rem;
+  }
+
+  .timeline-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .inovacao-text {
+    font-size: 0.95rem;
+  }
 }
 
 /* Statistics Section */
@@ -390,6 +578,12 @@
 }
 
 .organizacoes {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  box-sizing: border-box;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -397,7 +591,12 @@
   margin-left: -50vw;
   margin-right: -50vw;
   overflow-x: hidden;
-  box-sizing: border-box;
+}
+
+.organizacoes img {
+  width: 800px;
+  height: auto;
+  display: block;
 }
 
 /* Important Dates Section */
@@ -594,18 +793,34 @@
 }
 
 .footer {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin-bottom: -6rem;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  margin-bottom: -6rem;
+}
+
+.footer img {
+  width: 1400px;
+  height: auto;
+  display: block;
+  max-width: 100%;
 }
 
 .datasbolsatrilha {
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -613,8 +828,16 @@
   margin-left: -50vw;
   margin-right: -50vw;
   overflow-x: hidden;
-  box-sizing: border-box;
-  margin-bottom: -6rem;
+  padding: 2rem 0;
+}
+
+.datasbolsatrilha img {
+  width: 800px;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 @media (max-width: 900px) {

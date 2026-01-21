@@ -17,7 +17,7 @@
 }
 
 .aluno-hero-left .logo-top {
-  width: 200px;
+  width: 12em;
   height: auto;
   margin-bottom: 1rem;
 }
@@ -77,15 +77,16 @@
 }
 
 .aluno-image-frame {
-  width: 25rem;
+  width: 100%;
+  max-width: 400px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 255, 255, 0.2);
 }
 
 .aluno-image-frame img {
-  width: 25rem;
-  height: 30rem;
+  width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -134,9 +135,18 @@
 
 /* Aluno Bolsa Section Styles */
 .aluno-bolsa {
-  background: var(--bg);
+  background: #01011F;
   padding: 4rem 2rem;
   color: var(--text-primary);
+
+  box-sizing: border-box;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow-x: hidden;
 }
 
 .aluno-bolsa-container {
