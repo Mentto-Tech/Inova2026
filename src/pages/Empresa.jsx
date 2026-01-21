@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import inovacaoetrilha from '../assets/pages/inovacaoetrilha.png'
 import footer from '../assets/pages/footer.png'
 import Logo from '../assets/inovaskill/LogoInova.svg'
+import trilhas2 from '../assets/pages/trilhas2.png'
 import '../animations.css'
 import './Empresa.css'
 import useScrollAnimation from '../hooks/useScrollAnimation'
@@ -9,8 +9,8 @@ import imagemCentro from '../assets/imagens/imagemCentro.png'
 
 export default function Empresa() {
   const heroRef = useScrollAnimation()
-  const inovacaoRef = useScrollAnimation()
   const inscriptionRef = useScrollAnimation()
+  const trilhasRef = useScrollAnimation()
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -59,6 +59,10 @@ export default function Empresa() {
             A partir daí, os projetos podem <strong>seguir novos caminhos</strong>, como aceleração, institucionalização, investimento ou outras trilhas de crescimento. Essas etapas são <strong>possibilidades futuras, fora do escopo principal do InovaSkill.</strong>
           </p>
         </div>
+      </section>
+
+      <section className='datasbolsatrilha animate-fade-in-up' ref={trilhasRef}>
+        <img src={trilhas2} alt="Trilhas" />
       </section>
 
       <section className="empresa-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">

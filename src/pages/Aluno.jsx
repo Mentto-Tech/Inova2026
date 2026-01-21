@@ -31,6 +31,9 @@ export default function Aluno() {
       <section className="aluno-hero animate-fade-in" ref={heroRef}>
         <div className="aluno-hero-left">
           <img src={Logo} alt="logo" className="logo-top" />
+          <div className="aluno-image-mobile">
+            <img src={hugo} alt="Hugo" />
+          </div>
           <h1>
             Torne-se um <span className="accent">Agente
             <br /> Protagonista</span> de
