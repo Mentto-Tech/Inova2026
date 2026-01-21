@@ -126,8 +126,9 @@ export default function Empresa() {
                 <label htmlFor="associada">Associada a:</label>
                 <select id="associada" name="associada" required>
                   <option value="">Selecione</option>
-                  <option value="opcao1">Opcão 1</option>
-                  <option value="opcao2">Opcão 2</option>
+                  <option value="CIESP">CIESP</option>
+                  <option value="ADIPA">ADIPA</option>
+                  <option value="Nenhum">Nenhum</option>
                 </select>
               </div>
             </div>
