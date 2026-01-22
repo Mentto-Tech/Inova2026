@@ -131,40 +131,42 @@
 
 .aluno-bolsa-intro {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   margin: 0 0 3rem 0;
-  max-width: 800px;
+  max-width: 990px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 100;
 }
 
 .aluno-bolsa-intro strong {
-  font-weight: 600;
+  font-weight: 800;
   color: var(--text-primary);
 }
 
 .aluno-bolsa-content {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 3rem;
   align-items: start;
   margin: 3rem 0;
 }
 
 .aluno-bolsa-left {
+  max-width: 1500px;
   display: flex;
   justify-content: center;
 }
 
 .aluno-bolsa-left img {
-  max-width: 100%;
-  width: 100%;
+  width: 90%;
   border-radius: 12px;
 }
 
 .aluno-bolsa-right h3 {
-  font-size: 1.4rem;
+  padding-top: 5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   text-align: left;
   color: var(--text-secondary);
@@ -172,6 +174,8 @@
 }
 
 .aluno-bolsa-right p {
+  width: 470px;
+  font-weight: 100;
   font-size: 1rem;
   line-height: 1.6;
   margin: 0 0 1.5rem 0;
@@ -196,7 +200,8 @@
   margin-left: 2rem;
   font-size: 1rem;
   line-height: 1.8;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.6rem !important;
+  font-weight: 100;
   color: var(--text-primary);
 }
 
@@ -235,6 +240,11 @@
     gap: 2rem;
   }
 
+  .aluno-bolsa-left img {
+    width: 100%;
+    max-width: 700px;
+  }
+
   .aluno-bolsa-container h2 {
     font-size: 2rem;
   }
@@ -257,6 +267,11 @@
     margin-right: 0;
   }
 
+  .aluno-bolsa-left img {
+    width: 100%;
+    max-width: 520px;
+  }
+
   .aluno-bolsa-container h2 {
     font-size: 1.8rem;
   }
@@ -275,7 +290,7 @@
 }
 /* Aluno Inscription Form Styles */
 .aluno-inscription {
-  margin-top: 5rem;
+  margin-top: 2rem;
   background: var(--bg);
   padding: 4rem 2rem;
   color: var(--text-primary);

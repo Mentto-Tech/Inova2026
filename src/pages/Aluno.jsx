@@ -52,6 +52,7 @@ const sanitizeAluno = (data) => ({
   instituicao: data.instituicao.trim(),
   curso: data.curso.trim(),
   termo: data.termo.trim(),
+  cidade: data.cidade.trim(),
   cpf: data.cpf.trim(),
 })
 
@@ -70,6 +71,7 @@ export default function Aluno() {
     instituicao: '',
     curso: '',
     termo: '',
+    cidade: '',
     cpf: '',
   })
 
@@ -108,12 +110,6 @@ export default function Aluno() {
       return
     }
 
-    if (isOnlyDigits(sanitized.termo)) {
-      setError('Termo não pode conter apenas números.')
-      setLoading(false)
-      return
-    }
-
     if (!isValidEmail(sanitized.email)) {
       setError('Informe um e-mail válido.')
       setLoading(false)
@@ -142,6 +138,7 @@ export default function Aluno() {
         instituicao: '',
         curso: '',
         termo: '',
+        cidade: '',
         cpf: '',
       })
     } catch (err) {
@@ -246,6 +243,7 @@ export default function Aluno() {
               <p>A bolsa será concedida aos alunos que demonstrarem <strong>bom engajamento</strong> ao longo do programa. Isso significa:</p>
 
               <ul className="aluno-bolsa-list">
+                <br/>
                 <li><strong>Participação ativa</strong> nos encontros presenciais e online;</li>
                 <li><strong>Contribuição efetiva com seu squad</strong> e no desenvolvimento do projeto;</li>
                 <li><strong>Comprometimento com as atividades e entregas</strong> do programa.</li>
@@ -344,17 +342,31 @@ export default function Aluno() {
               </div>
             </div>
 
-            <div className="form-group form-row-single">
-              <label htmlFor="cpf">CPF:</label>
-              <input 
-                type="text" 
-                id="cpf" 
-                name="cpf" 
-                placeholder="000.000.000-00" 
-                value={formData.cpf}
-                onChange={handleChange}
-                required 
-              />
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="cidade">Cidade:</label>
+                <input 
+                  type="text" 
+                  id="cidade" 
+                  name="cidade" 
+                  value={formData.cidade}
+                  onChange={handleChange}
+                  required 
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="cpf">CPF:</label>
+                <input 
+                  type="text" 
+                  id="cpf" 
+                  name="cpf" 
+                  placeholder="000.000.000-00" 
+                  value={formData.cpf}
+                  onChange={handleChange}
+                  required 
+                />
+              </div>
             </div>
 
             <div className="cpf-info">

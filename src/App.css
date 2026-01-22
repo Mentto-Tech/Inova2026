@@ -865,7 +865,7 @@ body:has(.empresa-hero) #root {
 }
 
 .datasbolsatrilha {
-  background: black;
+  background: #00020d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -881,7 +881,7 @@ body:has(.empresa-hero) #root {
 }
 
 .datasbolsatrilha img {
-  width: 800px;
+  width: 1100px;
   height: auto;
   display: block;
   max-width: 100%;

@@ -19,29 +19,6 @@ const isValidPhone = (phone = '') => {
 
 const isOnlyDigits = (value = '') => /^\d+$/.test(value.trim())
 
-const isValidCNPJ = (value = '') => {
-  const cnpj = digitsOnly(value)
-  if (cnpj.length !== 14) return false
-  if (/^(\d)\1+$/.test(cnpj)) return false
-
-  const calcDigit = (base) => {
-    let sum = 0
-    let pos = base.length - 7
-    for (let i = base.length; i >= 1; i -= 1) {
-      sum += Number(base.charAt(base.length - i)) * pos
-      pos -= 1
-      if (pos < 2) pos = 9
-    }
-    const result = sum % 11
-    return result < 2 ? 0 : 11 - result
-  }
-
-  const base = cnpj.slice(0, 12)
-  const digit1 = calcDigit(base)
-  const digit2 = calcDigit(base + digit1)
-  return cnpj === base + String(digit1) + String(digit2)
-}
-
 const sanitizeEmpresa = (data) => ({
   nome: data.nome.trim(),
   email: data.email.trim(),
@@ -49,7 +26,7 @@ const sanitizeEmpresa = (data) => ({
   cargo: data.cargo.trim(),
   empresa: data.empresa.trim(),
   ramo: data.ramo.trim(),
-  cnpj: data.cnpj.trim(),
+  cidade: data.cidade.trim(),
   porte: data.porte.trim(),
   associada: data.associada.trim(),
 })
@@ -66,7 +43,7 @@ export default function Empresa() {
     cargo: '',
     empresa: '',
     ramo: '',
-    cnpj: '',
+    cidade: '',
     porte: '',
     associada: '',
   })
@@ -124,8 +101,8 @@ export default function Empresa() {
       return
     }
 
-    if (!isValidCNPJ(sanitized.cnpj)) {
-      setError('Informe um CNPJ válido (14 dígitos).')
+    if (!sanitized.cidade) {
+      setError('Informe a cidade.')
       setLoading(false)
       return
     }
@@ -152,7 +129,7 @@ export default function Empresa() {
         cargo: '',
         empresa: '',
         ramo: '',
-        cnpj: '',
+        cidade: '',
         porte: '',
         associada: '',
       })
@@ -187,7 +164,7 @@ export default function Empresa() {
             decisões e gerar resultado real.
           </p>
 
-          <a className="cta" href="/empresa#inscription">QUERO INSCREVER MINHA EMPRESA</a>
+          <a className="cta" href="/empresa#inscription">Pré-inscrição</a>
         </div>
 
         <div className="empresa-hero-right">
@@ -299,12 +276,12 @@ export default function Empresa() {
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="cnpj">CNPJ:</label>
+                <label htmlFor="cidade">Cidade:</label>
                 <input 
                   type="text" 
-                  id="cnpj" 
-                  name="cnpj" 
-                  value={formData.cnpj}
+                  id="cidade" 
+                  name="cidade" 
+                  value={formData.cidade}
                   onChange={handleChange}
                   required 
                 />
@@ -340,6 +317,7 @@ export default function Empresa() {
                   <option value="">Selecione</option>
                   <option value="CIESP">CIESP</option>
                   <option value="ADIPA">ADIPA</option>
+                  <option value="ADIPA">ASSERTI</option>
                   <option value="Nenhum">Nenhum</option>
                 </select>
               </div>

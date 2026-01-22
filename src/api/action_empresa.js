@@ -18,7 +18,7 @@ export const subscribeEmpresa = async (formData) => {
           cargo: formData.cargo,
           company: formData.empresa,
           setor: formData.ramo,
-          cnpj: formData.cnpj,
+          city: formData.cidade,
           porte: formData.porte,
           associado: formData.associada,
         },
