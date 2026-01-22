@@ -548,7 +548,8 @@
 
   .aluno-bolsa-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
+    margin-bottom: -3rem;
   }
 
   .aluno-bolsa-left img {
@@ -601,6 +602,16 @@
     padding: 2rem 1rem;
   }
 
+  .aluno-bolsa-left {
+    display: none;
+  }
+
+  .aluno-bolsa-right {
+    width: 80%;
+    text-align: center;
+    max-width: 640px;
+  }
+
   .aluno-bolsa-container h2 {
     font-size: 1.6rem;
   }
@@ -613,11 +624,22 @@
   .aluno-bolsa-right h3 {
     font-size: 1.2rem;
     text-align: center;
+    margin-left: 2.8rem;
+    padding-top: 1rem;
   }
 
   .aluno-bolsa-right p {
+    width: 400px;
     text-align: center;
     font-size: 0.95rem;
+    margin-left: -1rem;
+  }
+
+  .aluno-bolsa-list {
+    text-align: left;
+    padding: 0 1rem;
+    margin: 0 auto;
+    display: inline-block;
   }
 
   .aluno-bolsa-list {
@@ -631,7 +653,6 @@
 
   .aluno-bolsa-footer {
     font-size: 0.9rem;
-    padding-top: 1.5rem;
     margin-top: 2rem;
   }
 
