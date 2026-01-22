@@ -22,7 +22,7 @@
 }
 
 .aluno-hero-left h1 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-align: left;
   font-weight: 700;
   line-height: 1.2;
@@ -75,29 +75,31 @@
   align-items: center;
 }
 
-.aluno-image-mobile {
+.aluno-video-frame {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 255, 255, 0.2);
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.aluno-video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.aluno-video-mobile {
   display: none;
   width: 100%;
 }
 
-.aluno-image-mobile img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.aluno-image-frame {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 255, 255, 0.2);
-}
-
-.aluno-image-frame img {
-  width: 100%;
-  height: auto;
-  display: block;
+.aluno-video-mobile .aluno-video-frame {
+  max-width: 100%;
+  box-shadow: 0 12px 36px rgba(0, 255, 255, 0.18);
 }
 
 /* Aluno Bolsa Section Styles */
@@ -534,15 +536,15 @@
 
   .aluno-hero-left h1 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .aluno-hero-left .lead {
     text-align: center;
   }
 
-  .aluno-image-frame {
-    max-width: 350px;
+  .aluno-video-frame {
+    max-width: 480px;
     margin: 0 auto;
   }
 
@@ -571,7 +573,7 @@
   }
 
   .aluno-hero-left h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 1.3;
   }
 
@@ -584,13 +586,13 @@
     font-size: 0.9rem;
   }
 
-  .aluno-image-frame {
-    max-width: 280px;
+  .aluno-video-frame {
+    max-width: 360px;
   }
 
-  .aluno-image-mobile {
+  .aluno-video-mobile {
     display: block;
-    max-width: 280px;
+    max-width: 360px;
     margin: 0 auto;
   }
 
@@ -688,19 +690,19 @@
   }
 
   .aluno-hero-left h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .aluno-hero-left .lead {
     font-size: 0.9rem;
   }
 
-  .aluno-image-frame {
-    max-width: 240px;
+  .aluno-video-frame {
+    max-width: 320px;
   }
 
-  .aluno-image-mobile {
-    max-width: 240px;
+  .aluno-video-mobile {
+    max-width: 320px;
   }
 
   .aluno-bolsa-container h2 {

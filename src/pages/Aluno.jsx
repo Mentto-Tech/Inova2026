@@ -7,7 +7,6 @@ import { subscribeAluno } from '../api/action_aluno'
 import bolsa from '../assets/imagens/bolsa.png'
 import trilhas2 from '../assets/pages/trilhas2.png'
 import Logo from '../assets/inovaskill/LogoInova.svg'
-import hugo from '../assets/pages/hugo.png'
 import icon1 from '../assets/icones/image 391.svg'
 import icon2 from '../assets/icones/image 392.svg'
 import icon3 from '../assets/icones/image 393.svg'
@@ -157,8 +156,16 @@ export default function Aluno() {
       <section className="aluno-hero animate-fade-in" ref={heroRef}>
         <div className="aluno-hero-left">
           <img src={Logo} alt="logo" className="logo-top" />
-          <div className="aluno-image-mobile">
-            <img src={hugo} alt="Hugo" />
+          <div className="aluno-video-mobile">
+            <div className="aluno-video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/KS-ayjXlnbM?si=CEg5IVnVwm3496aT"
+                title="InovaSkill 2026"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
           </div>
           <h1>
             Torne-se um <span className="accent">Agente
@@ -180,8 +187,14 @@ export default function Aluno() {
         </div>
 
         <div className="aluno-hero-right">
-          <div className="aluno-image-frame">
-            <img src={hugo} alt="Hugo" />
+          <div className="aluno-video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/KS-ayjXlnbM?si=CEg5IVnVwm3496aT"
+              title="InovaSkill 2026"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            />
           </div>
         </div>
       </section>

@@ -168,7 +168,7 @@ export default function Empresa() {
         </div>
 
         <div className="empresa-hero-right">
-          <iframe width="500px" height="300" src="https://www.youtube.com/embed/xasiaxZXrfw?si=4f-yYaqOhywpvhee" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          <iframe width="560px" height="300" className='sombra' src="https://www.youtube.com/embed/xasiaxZXrfw?si=4f-yYaqOhywpvhee" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
       </section>
 
@@ -275,17 +275,6 @@ export default function Empresa() {
             </div>
 
             <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="cidade">Cidade:</label>
-                <input 
-                  type="text" 
-                  id="cidade" 
-                  name="cidade" 
-                  value={formData.cidade}
-                  onChange={handleChange}
-                  required 
-                />
-              </div>
               <div className="form-group">
                 <label htmlFor="porte">Porte da empresa:</label>
                 <select 
