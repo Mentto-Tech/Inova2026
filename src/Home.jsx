@@ -10,6 +10,7 @@ import Icon4 from './assets/Footerpage1/Vector-2.svg'
 import organizacoes from './assets/pages/organizacoesparceiras.png'
 import footer from './assets/pages/footer.png'
 import brainImg from './assets/imagens/brain.png'
+import cabecaImg from './assets/imagens/cabeca.png'
 import icon1 from './assets/icones/image 391.svg'
 import icon2 from './assets/icones/image 392.svg'
 import icon3 from './assets/icones/image 393.svg'
@@ -51,7 +52,7 @@ export default function Home() {
 
         <div className="hero-right">
           <div className="video-frame">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/xasiaxZXrfw?si=4f-yYaqOhywpvhee" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            <img src={cabecaImg} alt="Inovação" />
           </div>
         </div>
       </section>
@@ -70,7 +71,8 @@ export default function Home() {
             <img src={Icon2} alt="Duração de 6 meses" className="feature-icon" />
             <div>
               <div className="feature-title">Duração de 6 meses</div>
-              <div className="feature-sub">De abril à outubro de 2026</div>
+              <div className="feature-sub">De abril à </div>
+              <div className="feature-sub">outubro de 2026</div>
             </div>
           </div>
 
@@ -78,14 +80,16 @@ export default function Home() {
             <img src={Icon3} alt="Material personalizado" className="feature-icon" />
             <div>
               <div className="feature-title">Material personalizado</div>
-              <div className="feature-sub">Material de apoio e complementar gratuito</div>
+              <div className="feature-sub">Material de apoio e</div>
+              <div className="feature-sub">complementar gratuito</div>
             </div>
           </div>
 
-          <div className="feature-item">
+          <div className="feature-item-gratis">
             <img src={Icon4} alt="Gratuito" className="feature-icon" />
             <div>
-              <div className="feature-title">100% gratuito para alunos</div>
+              <div className="feature-title">100% gratuito</div> 
+              <div className="feature-title">para alunos</div>
             </div>
           </div>
         </div>

@@ -75,20 +75,21 @@ body:has(.empresa-hero) #root {
 }
 
 .hero-left {
-  flex: 1 1 48%;
+  flex: 1 1 44%;
+  max-width: 540px;
   text-align: left;
 }
 
 .logo-top {
-  height: 48px;
-  margin-bottom: 3.5rem;
+  height: 40px;
+  margin-bottom: 2rem;
   margin-top: 1rem;
 }
 
 .hero h1 {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   line-height: 1.02;
-  margin: 0 0 1rem 0;
+  justify-content: flex-end;
   font-weight: 700;
   color: var(--text-primary);
 }
@@ -98,23 +99,28 @@ body:has(.empresa-hero) #root {
 }
 
 .hero p.lead {
-  font-size: 1.125rem;
+  font-size: 1.3rem;
+  font-weight: 100;
   color: rgba(255,255,255,0.9);
-  max-width: 390px;
+  max-width: 490px;
   margin-bottom: 1.5rem;
+}
+
+.hero p.lead strong {
+  font-weight: 700;
 }
 
 .cta {
   display: inline-block;
   background: linear-gradient(90deg, #5fe0ff, var(--text-secondary));
   color: #041233;
-  padding: 0.9rem 3.6rem;
+  padding: 0.6rem 4rem;
   font-weight: 700;
   font-size: 1.2rem;
   margin-top: 1rem;
   box-shadow: 0 8px 24px rgba(0,175,239,0.18);
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 2px;
   position: relative;
   z-index: 1;
   transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease, opacity 260ms ease;
@@ -147,7 +153,6 @@ body:has(.empresa-hero) #root {
   box-shadow: 0 8px 20px rgba(2, 210, 252, 0.543);
 }
 
-/* Ensure CTA text color never changes on hover/focus */
 .cta:visited,
 .cta:hover,
 .cta:focus,
@@ -166,29 +171,31 @@ body:has(.empresa-hero) #root {
 }
 
 .hero-right {
-  flex: 1 1 48%;
+  flex: 1 1 56%;
   display: flex;
   justify-content: center;
 }
 
 .video-frame {
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 550px;
-  height: 300px;
-  background-color: #071033;
+  width: 100%;  
+  height: 100%;
+  max-width: 760px;
+  max-height: 500px;
   border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .video-frame img {
+  margin-top: 3rem;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.2) translate(6%, -4%); 
+  transform-origin: center;
 }
 
 @media (max-width: 900px) {
@@ -198,9 +205,9 @@ body:has(.empresa-hero) #root {
     text-align: center;
   }
   .hero-left { flex: unset; }
-  .hero-right { width: 100%; }
+  .hero-right { width: 100%; justify-content: center; }
   .hero h1 { font-size: 2.2rem; }
-  .video-frame { height: 200px; max-width: 100%; }
+  .video-frame { height: 260px; max-width: 100%; margin-left: 0; }
 }
 
 .features {
@@ -223,15 +230,18 @@ body:has(.empresa-hero) #root {
   font-size: 0.9rem;
   color: #071033;
   text-align: left;
+  margin: 0px;
 }
 
 .features-grid {
-  width: 95%;
-  margin: 0;
+  padding-left: 6.2rem;
+  width: 90%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: stretch;
-  padding-left: 3rem;
+  gap: 3.2rem;
+  flex-wrap: wrap;
 }
 
 .feature-item {
@@ -239,8 +249,23 @@ body:has(.empresa-hero) #root {
   gap: 0.5rem;
   align-items: center;
   justify-content: left;
-  flex: 1 1 0;
+  flex: 0 1 230px;
   padding: 0.6rem 0.3rem;
+}
+
+.feature-item-gratis {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: left;
+  flex: 0 1 230px;
+  padding: 0.6rem 0.3rem;
+}
+
+@media (min-width: 801px) {
+  .feature-item-gratis {
+    margin-left: -1.25rem;
+  }
 }
 
 .feature-icon {
@@ -250,6 +275,7 @@ body:has(.empresa-hero) #root {
 }
 
 .feature-sub {
+  max-width: 140px;
   font-size: 0.7rem;
   color: #475569;
   margin-top: 0.25rem;
@@ -467,7 +493,8 @@ body:has(.empresa-hero) #root {
 
 .stats-intro {
   color: var(--text-primary);
-  font-size: 1.25rem;
+  margin-left: 2.3rem;
+  font-size: 1.45rem;
   line-height: 1.6;
   margin-bottom: 3rem;
   text-align: center;
@@ -520,13 +547,14 @@ body:has(.empresa-hero) #root {
 
 /* How It Works Section */
 .how-it-works {
-  background: var(--bg);
+  background: #080029;
   padding: 4rem 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .how-it-works-container {
+  background: #080029;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -1136,6 +1164,10 @@ body:has(.empresa-hero) #root {
     margin-top: 1rem;
   }
 
+  .video-frame img {
+    transform: scale(1.08) translate(4%, -2%);
+  }
+
   .features {
     padding: 1.5rem 1rem;
     margin-top: 2rem;
@@ -1147,7 +1179,6 @@ body:has(.empresa-hero) #root {
   }
 
   .feature-item {
-    padding: 0.8rem;
     justify-content: flex-start;
   }
 
@@ -1159,10 +1190,6 @@ body:has(.empresa-hero) #root {
 
   .feature-title {
     font-size: 0.85rem;
-  }
-
-  .feature-sub {
-    font-size: 0.75rem;
   }
 
   /* Inovação Aberta - Mobile */
@@ -1464,6 +1491,10 @@ body:has(.empresa-hero) #root {
 
   .video-frame {
     height: 180px;
+  }
+
+  .video-frame img {
+    transform: scale(1.05) translate(3%, -2%);
   }
 
   .feature-icon {
