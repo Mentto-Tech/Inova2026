@@ -212,7 +212,7 @@ export default function Empresa() {
         </div>
       </section>
 
-      <section className='datasbolsatrilha animate-fade-in-up' ref={trilhasRef}>
+      <section className='datasbolsatrilha animate-fade-in-up trilhas' ref={trilhasRef}>
         <img src={trilhas2} alt="Trilhas" />
       </section>
 

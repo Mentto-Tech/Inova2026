@@ -13,6 +13,23 @@ body:has(.empresa-hero) .footer {
   margin-right: 0;
 }
 
+/* Trilhas - página Empresa */
+body:has(.empresa-hero) .datasbolsatrilha {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  box-sizing: border-box;
+}
+
+body:has(.empresa-hero) .datasbolsatrilha img {
+  width: 1100px;
+  max-width: 96%;
+  height: auto;
+  display: block;
+}
+
 body:has(.empresa-hero) .empresa-hero,
 body:has(.empresa-hero) .empresa-inscription {
   width: 100%;
@@ -21,6 +38,10 @@ body:has(.empresa-hero) .empresa-inscription {
   margin-right: 0;
   max-width: none;
   box-sizing: border-box;
+}
+
+.trilhas {
+  background-color: #00020d !important;
 }
 
 .empresa-hero {
@@ -51,7 +72,7 @@ body:has(.empresa-hero) .empresa-inscription {
 }
 
 .empresa-hero-left h1 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-align: left;
   font-weight: 700;
   line-height: 1.2;
@@ -64,12 +85,13 @@ body:has(.empresa-hero) .empresa-inscription {
 }
 
 .empresa-hero-left .lead {
+  width: 460px;
   text-align: left;
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--text-primary);
   margin: 0;
-  font-weight: 400;
+  font-weight: 100;
 }
 
 .empresa-hero-left .lead strong {
@@ -79,7 +101,8 @@ body:has(.empresa-hero) .empresa-inscription {
 
 .empresa-hero-left .cta {
   width: fit-content;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
   background: linear-gradient(90deg, #5fe0ff, var(--text-secondary));
   color: #010624;
   border: none;
@@ -413,6 +436,7 @@ body:has(.empresa-hero) .empresa-inscription {
 
   .empresa-hero-left .lead {
     text-align: center;
+    /* width: 80%; */
   }
 
   .empresa-hero-right {
@@ -457,6 +481,7 @@ body:has(.empresa-hero) .empresa-inscription {
 
   .empresa-hero-left .lead {
     font-size: 0.95rem;
+    width: 80%;
   }
 
   .empresa-hero-left .cta {
