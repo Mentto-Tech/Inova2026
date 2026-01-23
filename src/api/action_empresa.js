@@ -1,14 +1,12 @@
 export const subscribeEmpresa = async (formData) => {
-  const API_KEY = import.meta.env.VITE_MAILERLITE_API_KEY;
   const GROUP_ID = "177207349240399674";
 
   try {
-    const response = await fetch("https://connect.mailerlite.com/api/subscribers", {
+    const response = await fetch("/api/subscribe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "Authorization": `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
         email: formData.email,
@@ -26,12 +24,14 @@ export const subscribeEmpresa = async (formData) => {
       }),
     });
 
+    const rawText = await response.text();
+    const data = rawText ? JSON.parse(rawText) : {};
+
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || "Erro ao realizar inscrição da empresa.");
+      throw new Error(data.message || "Erro ao realizar inscrição da empresa.");
     }
 
-    return await response.json();
+    return data;
   } catch (error) {
     console.error("Erro no cadastro MailerLite (Empresa):", error);
     throw error;
