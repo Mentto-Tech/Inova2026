@@ -78,13 +78,14 @@ body:has(.empresa-hero) #root {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
 }
 
 .hero-left {
   flex: 1 1 44%;
   max-width: 540px;
   text-align: left;
+  padding-left: 3.5rem;
 }
 
 .logo-top {
@@ -219,7 +220,7 @@ body:has(.empresa-hero) #root {
 
 @media (min-width: 1025px) {
   .hero {
-    padding-left: 0;
+    padding: 1rem 2rem;
   }
 }
 
@@ -1151,7 +1152,7 @@ body:has(.empresa-hero) #root {
   }
 
   .hero {
-    padding: 0;
+     padding: 0;
   }
 
   .hero {
