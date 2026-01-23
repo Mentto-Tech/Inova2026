@@ -3,8 +3,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const API_KEY = process.env.MAILERLITE_API_KEY; 
-  if (!API_KEY) return res.status(500).json({ message: 'API key missing' });
+  // Accept either MAILERLITE_API_KEY (server) or legacy VITE_MAILERLITE_API_KEY
+  const API_KEY = process.env.MAILERLITE_API_KEY || process.env.VITE_MAILERLITE_API_KEY; 
+  if (!API_KEY) return res.status(500).json({ message: 'API key missing (set MAILERLITE_API_KEY)' });
 
   const { email, fields, groups } = req.body || {};
   if (!email) return res.status(400).json({ message: 'Email é obrigatório' });
