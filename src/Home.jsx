@@ -18,6 +18,7 @@ import icon4 from './assets/icones/image 394.svg'
 import icon5 from './assets/icones/image 395.svg'
 import predioIcon from './assets/icones/predio.svg'
 import chapeuIcon from './assets/icones/chapeu.png'
+import editalPdf from './assets/pdf/Edital_InnovaSkill2026.pdf'
 
 export default function Home() {
   const heroRef = useScrollAnimation()
@@ -166,7 +167,7 @@ export default function Home() {
             </div>
           </div>
 
-          <a className="cta cta-dates" href="https://exemplo.com/edital" target="_blank" rel="noopener noreferrer">Clique aqui para acessar o edital!</a>
+          <a className="cta cta-dates" href={editalPdf} download="Edital_InnovaSkill2026.pdf">Clique aqui para acessar o edital!</a>
         </div>
       </section>
 
