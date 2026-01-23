@@ -63,12 +63,21 @@ body:has(.empresa-hero) .empresa-inscription {
   flex-direction: column;
   gap: 1.5rem;
   padding-left: 0;
+  align-items: flex-start;
+}
+
+.logo {
+  height: 6em;
+  /* padding-top: 1.5em; */
+  will-change: filter;
+  transition: filter 300ms;
 }
 
 .empresa-hero-left .logo-top {
-  width: 210px;
-  height: 60px;
-  margin-bottom: 1rem;
+  height: 40px;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  align-self: flex-start;
 }
 
 .empresa-hero-left h1 {
@@ -101,12 +110,12 @@ body:has(.empresa-hero) .empresa-inscription {
 
 .empresa-hero-left .cta {
   width: fit-content;
-  padding: 0.5rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   font-size: 1rem;
   background: linear-gradient(90deg, #5fe0ff, var(--text-secondary));
   color: #010624;
   border: none;
-  border-radius: 8px;
+  border-radius: 2px;
   font-weight: 700;
   cursor: pointer;
   text-decoration: none;

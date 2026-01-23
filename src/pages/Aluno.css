@@ -3,22 +3,27 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: var(--desktop-max-width);
+  max-width: none;
+  margin: 0;
+  padding: 1rem 6rem;
   background: var(--bg);
+  box-sizing: border-box;
 }
 
 .aluno-hero-left {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-left: 2rem;
+  padding-left: 0;
 }
 
 .aluno-hero-left .logo-top {
-  width: 12em;
-  height: auto;
-  margin-bottom: 1rem;
+  height: 40px;
+  width: auto;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  align-self: flex-start;
 }
 
 .aluno-hero-left h1 {
@@ -54,7 +59,7 @@
   background: linear-gradient(90deg, #5fe0ff, var(--text-secondary));
   color: #010624;
   border: none;
-  border-radius: 8px;
+  border-radius: 2px;
   font-weight: 700;
   cursor: pointer;
   text-decoration: none;
@@ -569,7 +574,8 @@
   }
 
   .aluno-hero-left .logo-top {
-    width: 10em;
+    height: 40px;
+    width: auto;
   }
 
   .aluno-hero-left h1 {
@@ -686,7 +692,8 @@
 /* Mobile Small */
 @media (max-width: 480px) {
   .aluno-hero-left .logo-top {
-    width: 8em;
+    height: 40px;
+    width: auto;
   }
 
   .aluno-hero-left h1 {

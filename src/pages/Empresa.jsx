@@ -164,7 +164,7 @@ export default function Empresa() {
             decisões e gerar resultado real.
           </p>
 
-          <a className="cta" href="/empresa#inscription">Pré-inscrição</a>
+          <a className="cta" href="/empresa#inscription">QUERO FAZER A PRÉ-INSCRIÇÃO DA MINHA EMPRESA</a>
         </div>
 
         <div className="empresa-hero-right">
@@ -291,9 +291,7 @@ export default function Empresa() {
                   <option value="grande">Grande Empresa</option>
                 </select>
               </div>
-            </div>
 
-            <div className="form-row form-row-single">
               <div className="form-group">
                 <label htmlFor="associada">Associada a:</label>
                 <select 
