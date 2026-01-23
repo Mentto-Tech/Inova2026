@@ -183,7 +183,7 @@ export default function Home() {
               <li>Conteúdos dinâmicos;</li>
               <li>Webinars com cases de sucesso;</li>
               <li>Atividades práticas;</li>
-              <li>Suporte do time de especialistas Mentt;</li>
+              <li>Suporte do time de especialistas Mentto;</li>
               <li>Desenvolvimento de projetos de empreendedorismo ou inovação aberta;</li>
               <li>Mentoria durante o desenvolvimento do projeto;</li>
               <li>Material de apoio e complementar.</li>
