@@ -3,19 +3,25 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  width: var(--desktop-max-width);
-  max-width: none;
-  margin: 0;
-  padding: 1rem 6rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
   background: var(--bg);
   box-sizing: border-box;
+}
+
+@media (min-width: 1025px) {
+  .aluno-hero {
+    padding-left: 3.5rem;
+    padding-top: 1.75rem;
+  }
 }
 
 .aluno-hero-left {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-left: 0;
 }
 
 .aluno-hero-left .logo-top {

@@ -75,10 +75,10 @@ body:has(.empresa-hero) #root {
   gap: 3rem;
   align-items: center;
   justify-content: space-between;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
 }
 
 .hero-left {
@@ -215,6 +215,12 @@ body:has(.empresa-hero) #root {
   .hero-right { width: 100%; justify-content: center; }
   .hero h1 { font-size: 2.2rem; }
   .video-frame { height: 260px; max-width: 100%; margin-left: 0; }
+}
+
+@media (min-width: 1025px) {
+  .hero {
+    padding-left: 0;
+  }
 }
 
 .features {
@@ -501,7 +507,7 @@ body:has(.empresa-hero) #root {
 
 .stats-intro {
   color: var(--text-primary);
-  margin-left: 2.3rem;
+  margin-left: 0;
   font-size: 1.45rem;
   line-height: 1.6;
   margin-bottom: 3rem;
@@ -514,9 +520,10 @@ body:has(.empresa-hero) #root {
 
 .stats-grid {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 2.5rem;
+  flex-wrap: wrap;
 }
 
 .stat-item {
@@ -1139,8 +1146,12 @@ body:has(.empresa-hero) #root {
   }
 
   .site {
-    padding: 1.5rem 1rem;
+    padding: 0;
     overflow-x: hidden;
+  }
+
+  .hero {
+    padding: 0;
   }
 
   .hero {
@@ -1311,12 +1322,9 @@ body:has(.empresa-hero) #root {
   }
 
   /* Stats - Mobile */
-  .stats {
-    padding: 2rem 1rem;
-  }
 
   .stats-container {
-    padding: 0 0.5rem;
+    padding: 0 0 0 1rem;
   }
 
   .stats-intro {
@@ -1324,6 +1332,7 @@ body:has(.empresa-hero) #root {
     margin-bottom: 2rem;
     text-align: center;
     padding: 0 0.5rem;
+    padding-left: 2rem;
   }
 
   .stats-grid {
@@ -1515,8 +1524,13 @@ body:has(.empresa-hero) #root {
   }
 
   .site {
-    padding: 0.75rem 1rem 0;
+    padding: 0;
     overflow-x: hidden;
+  }
+
+  .hero {
+    padding: 0;
+    width: 90%;
   }
 
   .hero {

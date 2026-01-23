@@ -30,7 +30,14 @@ body:has(.empresa-hero) .datasbolsatrilha img {
   display: block;
 }
 
-body:has(.empresa-hero) .empresa-hero,
+body:has(.empresa-hero) .empresa-hero {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
 body:has(.empresa-hero) .empresa-inscription {
   width: 100%;
   left: 0;
@@ -49,13 +56,20 @@ body:has(.empresa-hero) .empresa-inscription {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  padding-top: 1rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
-  max-width: none;
-  margin: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
   background: var(--bg);
   box-sizing: border-box;
+}
+
+@media (min-width: 1025px) {
+  .empresa-hero,
+  body:has(.empresa-hero) .empresa-hero {
+    padding-left: 3.95rem;
+    padding-top: 1.75rem;
+  }
 }
 
 .empresa-hero-left {
