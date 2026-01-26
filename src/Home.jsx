@@ -44,7 +44,7 @@ export default function Home() {
           </h1>
 
           <p className="lead">
-            Programa de inovação aberta que <strong>conecta empresas e estudantes para
+            Programa de inovação aberta que <strong>conecta empresas, academias e talentos para
             desenvolver soluções tecnológicas e de negócio </strong> voltadas a desafios reais do mercado.
           </p>
 
@@ -106,27 +106,27 @@ export default function Home() {
           <div className="stats-grid">
             <div className="stat-item">
               <div className="stat-number">30</div>
-              <div className="stat-label">Empresas<br />Participantes</div>
+              <div className="stat-label">Empresas<br />Já participaram</div>
             </div>
 
             <div className="stat-item">
               <div className="stat-number">+350</div>
-              <div className="stat-label">Participantes</div>
+              <div className="stat-label">Participantes impactados</div>
             </div>
 
             <div className="stat-item">
               <div className="stat-number">+500</div>
-              <div className="stat-label">Horas de<br />acompanhamento e<br />mentorias na última<br />edição</div>
+              <div className="stat-label">Horas de mentorias<br />e acompanhamentos<br />realizadas</div>
             </div>
 
             <div className="stat-item">
               <div className="stat-number">42</div>
-              <div className="stat-label">Projetos<br />Inovadores</div>
+              <div className="stat-label">Projetos Inovadores<br />desenvolvidos</div>
             </div>
 
             <div className="stat-item">
               <div className="stat-number">40%</div>
-              <div className="stat-label">Alunos<br />contratados</div>
+              <div className="stat-label">Dos alunos participantes<br />já contratados</div>
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function Home() {
           <div className="dates-grid">
             <div className="date-item">
               <img src={icon1} alt="Período de inscrições" className="date-icon" />
-              <div className="date-label">23/02 a 23/03</div>
+              <div className="date-label">09/02 a 23/03</div>
               <div className="date-title">Período de inscrições</div>
             </div>
 
@@ -183,7 +183,7 @@ export default function Home() {
               <li>Conteúdos dinâmicos;</li>
               <li>Webinars com cases de sucesso;</li>
               <li>Atividades práticas;</li>
-              <li>Suporte do time de especialistas Mentto;</li>
+              <li>Suporte especializado durante todo o programa;</li>
               <li>Desenvolvimento de projetos de empreendedorismo ou inovação aberta;</li>
               <li>Mentoria durante o desenvolvimento do projeto;</li>
               <li>Material de apoio e complementar.</li>

@@ -195,7 +195,7 @@ export default function Empresa() {
 
       <section className="empresa-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
         <div className="empresa-inscription-container">
-          <h2>Inscreva sua Empresa Abaixo:</h2>
+          <h2>Faça a Pré-Inscrição da sua Empresa Abaixo:</h2>
           <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
 
           <form className="empresa-form" onSubmit={handleSubmit}>

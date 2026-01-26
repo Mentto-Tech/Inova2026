@@ -276,7 +276,7 @@ export default function Aluno() {
 
       <section className="aluno-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
         <div className="aluno-inscription-container">
-          <h2>Inscreva-se Abaixo:</h2>
+          <h2>Faça sua Pré-Inscrição Abaixo:</h2>
           <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
 
           <form className="aluno-form" onSubmit={handleSubmit}>
