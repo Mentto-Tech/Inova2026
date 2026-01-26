@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   web:
-    image: ${ECR_IMAGE:-000000000000.dkr.ecr.us-east-1.amazonaws.com/inova:latest}
+    image: ${ECR_IMAGE:-000000000000.dkr.ecr.us-east-2.amazonaws.com/inova:latest}
     pull_policy: always
     ports:
       - "80:80"
