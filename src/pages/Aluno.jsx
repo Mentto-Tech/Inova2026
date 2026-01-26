@@ -206,7 +206,7 @@ export default function Aluno() {
           <div className="dates-grid">
             <div className="date-item">
               <img src={icon1} alt="Período de inscrições" className="date-icon" />
-              <div className="date-label">23/02 a 23/03</div>
+              <div className="date-label">09/02 a 23/03</div>
               <div className="date-title">Período de inscrições</div>
             </div>
 
