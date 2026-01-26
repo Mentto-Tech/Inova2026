@@ -13,6 +13,7 @@ import icon3 from '../assets/icones/image 393.svg'
 import icon4 from '../assets/icones/image 394.svg'
 import icon5 from '../assets/icones/image 395.svg'
 import footer from '../assets/pages/footer.png'
+import editalPdf from '../assets/pdf/Edital_InnovaSkill2026.pdf'
 
 const digitsOnly = (value = '') => value.replace(/\D+/g, '')
 
@@ -234,7 +235,7 @@ export default function Aluno() {
             </div>
           </div>
 
-          <a className="cta cta-dates" href="https://exemplo.com/edital" target="_blank" rel="noopener noreferrer">Clique aqui para acessar o edital!</a>
+          <a className="cta cta-dates" href={editalPdf} target="_blank" rel="noopener noreferrer">Clique aqui para acessar o edital!</a>
         </div>
       </section>
 
