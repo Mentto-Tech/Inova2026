@@ -101,12 +101,6 @@ export default function Empresa() {
       return
     }
 
-    if (!sanitized.cidade) {
-      setError('Informe a cidade.')
-      setLoading(false)
-      return
-    }
-
     if (!sanitized.porte) {
       setError('Selecione o porte da empresa.')
       setLoading(false)
