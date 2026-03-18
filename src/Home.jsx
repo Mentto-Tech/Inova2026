@@ -9,6 +9,7 @@ import Icon3 from './assets/Footerpage1/Vector-1.svg'
 import Icon4 from './assets/Footerpage1/Vector-2.svg'
 import organizacoes from './assets/pages/organizacoesparceiras.png'
 import footer from './assets/pages/footer.png'
+import empresasParticipantes from './assets/pages/empresasquejaparticiparaminova2026.png'
 import brainImg from './assets/imagens/brain.png'
 import cabecaImg from './assets/imagens/cabeca.png'
 import icon1 from './assets/icones/image 391.svg'
@@ -24,6 +25,7 @@ export default function Home() {
   const heroRef = useScrollAnimation()
   const featuresRef = useScrollAnimation()
   const statsRef = useScrollAnimation()
+  const pastCompaniesRef = useScrollAnimation()
   const datesRef = useScrollAnimation()
   const howItWorksRef = useScrollAnimation()
   const organizacoesRef = useScrollAnimation()
@@ -131,6 +133,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+    
+      <section className="past-companies animate-fade-in-up" ref={pastCompaniesRef}>
+        <div className="past-companies-container">
+          <h2 className="past-companies-title">Já passaram pelo programa</h2>
+          <img
+            src={empresasParticipantes}
+            alt="Empresas que já participaram do programa Inova 2026"
+            className="past-companies-image"
+          />
+        </div>
+      </section>
 
       <section className="important-dates animate-fade-in-up" ref={datesRef}>
         <div className="important-dates-container">
@@ -194,7 +207,10 @@ export default function Home() {
       </section>
 
       <section className='organizacoes animate-fade-in-up' ref={organizacoesRef}>
-        <img src={organizacoes} alt="Organizações Parceiras" />
+        <div className="organizacoes-container">
+          <h2 className="organizacoes-title">Parceiros do programa</h2>
+          <img src={organizacoes} alt="Organizações Parceiras" className="organizacoes-image" />
+        </div>
       </section>
 
       <section className="inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">

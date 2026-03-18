@@ -658,17 +658,80 @@ body:has(.empresa-hero) #root {
   overflow-x: hidden;
 }
 
-.organizacoes img {
+.organizacoes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.organizacoes-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.organizacoes-image {
   width: 1200px;
   height: auto;
   display: block;
+}
+
+/* Past Companies Section */
+.past-companies {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow-x: hidden;
+}
+
+.past-companies-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.past-companies-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.past-companies-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .organizacoes-title,
+  .past-companies-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .organizacoes-title,
+  .past-companies-title {
+    font-size: 1.8rem;
+  }
+  .past-companies {
+    padding-top: 0.5rem;
+  }
 }
 
 /* Important Dates Section */
 .important-dates {
   background: #000000;
   padding: 4rem 2rem;
-  margin-top: 1rem;
   width: 100vw;
   position: relative;
   left: 50%;
