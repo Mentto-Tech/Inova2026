@@ -136,7 +136,7 @@ export default function Home() {
     
       <section className="past-companies animate-fade-in-up" ref={pastCompaniesRef}>
         <div className="past-companies-container">
-          <h2 className="past-companies-title">Já passaram pelo programa</h2>
+          <h2 className="past-companies-title">Já Passaram pelo Programa</h2>
           <img
             src={empresasParticipantes}
             alt="Empresas que já participaram do programa Inova 2026"
@@ -208,7 +208,7 @@ export default function Home() {
 
       <section className='organizacoes animate-fade-in-up' ref={organizacoesRef}>
         <div className="organizacoes-container">
-          <h2 className="organizacoes-title">Parceiros do programa</h2>
+          <h2 className="organizacoes-title">Parceiros do Programa</h2>
           <img src={organizacoes} alt="Organizações Parceiras" className="organizacoes-image" />
         </div>
       </section>
