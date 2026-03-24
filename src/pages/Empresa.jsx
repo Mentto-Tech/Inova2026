@@ -153,12 +153,13 @@ export default function Empresa() {
             de inovação</strong> no dia a dia do negócio.
           </p>
 
-          <p className="lead">
+          {/* <p className="lead">*/}
+          <p className="lead" style={{ marginBottom: '30px' }}>
             Com aplicação prática em transformação digital, usando Data Analytics e IA Generativa para apoiar
             decisões e gerar resultado real.
           </p>
 
-          <a className="cta" href="/empresa#inscription">QUERO FAZER A PRÉ-INSCRIÇÃO DA MINHA EMPRESA</a>
+          {/* <a className="cta" href="/empresa#inscription">QUERO FAZER A PRÉ-INSCRIÇÃO DA MINHA EMPRESA</a> */}
         </div>
 
         <div className="empresa-hero-right">
@@ -187,7 +188,7 @@ export default function Empresa() {
         <img src={trilhas2} alt="Trilhas" />
       </section>
 
-      <section className="empresa-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
+      {/* <section className="empresa-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
         <div className="empresa-inscription-container">
           <h2>Faça a Pré-Inscrição da sua Empresa Abaixo:</h2>
           <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
@@ -319,7 +320,7 @@ export default function Empresa() {
             </button>
           </form>
         </div>
-      </section>
+      </section> */}
 
       <section className='footer'>
         <img src={footer} alt="footer" />

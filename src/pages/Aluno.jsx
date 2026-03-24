@@ -179,12 +179,13 @@ export default function Aluno() {
             e amplie seu potencial de inovação, na prática!</strong>
           </p>
 
-          <p className="lead">
+          {/* <p className="lead">*/}
+          <p className="lead" style={{ marginBottom: '30px' }}>
             Com aplicação prática em transformação digital, usando Data Analytics e IA Generativa para apoiar
             decisões e gerar resultado real.
           </p>
 
-          <a className="cta" href="#inscription">QUERO ME INSCREVER</a>
+          {/* <a className="cta" href="#inscription">QUERO ME INSCREVER</a> */}
         </div>
 
         <div className="aluno-hero-right">
@@ -275,7 +276,7 @@ export default function Aluno() {
         <img src={trilhas2} alt="Trilhas" />
       </section>
 
-      <section className="aluno-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
+      {/* <section className="aluno-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
         <div className="aluno-inscription-container">
           <h2>Faça sua Pré-Inscrição Abaixo:</h2>
           <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
@@ -410,7 +411,7 @@ export default function Aluno() {
             </button>
           </form>
         </div>
-      </section>
+      </section> */}
 
       <section className='footer'>
         <img src={footer} alt="footer" />

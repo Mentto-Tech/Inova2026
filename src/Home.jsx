@@ -50,7 +50,8 @@ export default function Home() {
             desenvolver soluções tecnológicas e de negócio </strong> voltadas a desafios reais do mercado.
           </p>
 
-          <a className="cta" href="#inscription">QUERO FAZER PARTE</a>
+          <a className="cta" href="#inscription">Saiba mais</a>
+          {/* <a className="cta" href="#inscription">QUERO FAZER PARTE</a> */}
         </div>
 
         <div className="hero-right">
@@ -201,7 +202,8 @@ export default function Home() {
               <li>Mentoria durante o desenvolvimento do projeto;</li>
               <li>Material de apoio e complementar.</li>
             </ul>
-            <a className="cta" href="#inscription">QUERO FAZER PARTE</a>
+            {/* <a className="cta" href="#inscription">QUERO FAZER PARTE</a> */}
+            <a className="cta" href="#inscription">Saiba mais</a>
           </div>
         </div>
       </section>
@@ -215,19 +217,21 @@ export default function Home() {
 
       <section className="inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
         <div className="inscription-container">
-          <h2>Inscrição para a Edição 2026</h2>
-          <p className="inscription-subtitle">Escolha a baixo qual vai ser seu time durante essa jornada</p>
+          {/* <h2>Inscrição para a Edição 2026</h2> */}
+          <h2>Entenda um pouco mais sobre essa iniciativa</h2>
+          {/* <p className="inscription-subtitle">Escolha a baixo qual vai ser seu time durante essa jornada</p> */}
+          <p className="inscription-subtitle">Saiba mais sobre a estrutura dos times do programa</p>
 
           <div className="inscription-cards">
             <Link to="/empresa" className="inscription-card card-empresa">
-              <div className="card-label">Quero inscrever minha empresa</div>
+              {/* <div className="card-label">Quero inscrever minha empresa</div> */}
               <h3>EMPRESA</h3>
               <img src={predioIcon} alt="Empresa" className="card-icon" />
               <span className="card-button">CLIQUE AQUI</span>
             </Link>
 
             <Link to="/aluno" className="inscription-card card-aluno">
-              <div className="card-label">Quero me inscrever como</div>
+              {/* <div className="card-label">Quero me inscrever como</div> */}
               <h3>ALUNO</h3>
               <img src={chapeuIcon} alt="Aluno" className="card-icon" />
               <span className="card-button">CLIQUE AQUI</span>
