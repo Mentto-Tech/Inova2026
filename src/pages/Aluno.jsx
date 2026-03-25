@@ -208,7 +208,7 @@ export default function Aluno() {
         <p className="aluno-aprovado-intro">
           <strong> Atenção! </strong> Se o seu nome está nesta lista, fique atento ao seu celular e e-mail. Em breve, você receberá as instruções para confirmar sua participação no programa.
         </p>
-        <img src={alunosAprovados} alt="Alunos Aprovados" style={{ maxWidth: '90%', height: 'auto', marginBottom: '-3rem'}} />
+        <img src={alunosAprovados} alt="Alunos Aprovados" style={{ maxWidth: '90%', height: 'auto', marginBottom: '-2rem'}} />
       </section>
       
 
