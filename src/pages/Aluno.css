@@ -768,3 +768,24 @@
   margin-top: 10px;
   text-align: center;
 }
+
+.aprovados-section-title {
+  font-size: 2.5rem;
+}
+
+.aluno-aprovado-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 3rem 0;
+  max-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 100;
+  margin-bottom: -2rem;
+}
+
+.aluno-aprovado-intro strong {
+  font-weight: 800;
+  color: var(--text-primary);
+}

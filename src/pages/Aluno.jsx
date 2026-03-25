@@ -13,6 +13,7 @@ import icon3 from '../assets/icones/image 393.svg'
 import icon4 from '../assets/icones/image 394.svg'
 import icon5 from '../assets/icones/image 395.svg'
 import footer from '../assets/pages/footer.png'
+import alunosAprovados from '../assets/pages/alunosAprovados.jpeg'
 import editalPdf from '../assets/pdf/Edital_InnovaSkill2026.pdf'
 
 const digitsOnly = (value = '') => value.replace(/\D+/g, '')
@@ -63,6 +64,7 @@ export default function Aluno() {
   const bolsaRef = useScrollAnimation()
   const trilhasRef = useScrollAnimation()
   const inscriptionRef = useScrollAnimation()
+  const approvedStudentsRef = useScrollAnimation()
 
   const [formData, setFormData] = useState({
     nome: '',
@@ -200,6 +202,15 @@ export default function Aluno() {
           </div>
         </div>
       </section>
+
+      <section className="aluno-bolsa animate-fade-in-up" ref={approvedStudentsRef}>
+        <h2 className="aprovados-section-title">Lista de alunos aprovados</h2>
+        <p className="aluno-aprovado-intro">
+          <strong> Atenção! </strong> Se o seu nome está nesta lista, fique atento ao seu celular e e-mail. Em breve, você receberá as instruções para confirmar sua participação no programa.
+        </p>
+        <img src={alunosAprovados} alt="Alunos Aprovados" style={{ maxWidth: '90%', height: 'auto', marginBottom: '-3rem'}} />
+      </section>
+      
 
       <section className="important-dates animate-fade-in-up" ref={datesRef}>
         <div className="important-dates-container">
