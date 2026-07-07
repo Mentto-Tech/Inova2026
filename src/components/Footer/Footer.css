@@ -1,0 +1,81 @@
+.footer-main {
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-top {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-realizador {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.realizador-label {
+  color: #010624;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.citap-logo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.citap-logo-footer {
+  max-width: 150px;
+  height: auto;
+  display: block;
+}
+
+.org-logo-footer {
+  max-width: 150px;
+  margin-bottom: 1rem;
+  height: auto;
+  display: block;
+}
+
+.footer-copyright {
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-left: auto;
+  white-space: nowrap;
+  margin-right: 4rem;
+}
+
+@media (max-width: 900px) {
+
+  .footer-main {
+    padding: 1rem 0rem;
+  }
+
+  .footer-realizador {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-copyright {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+  }
+}

@@ -1,0 +1,135 @@
+.features-grid {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.logo-city-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.h1-title {
+    margin-top: 1.5rem !important;
+}
+
+.city-name {
+    display: flex;
+    align-items: center;
+}
+
+.logo-top {
+    height: 40px !important;
+}
+
+.hyphen-separator {
+    color: var(--text-secondary, #00AFEF);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0.6rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.hyphen-separator-home {
+    color: var(--text-secondary, #00AFEF);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.organizer-logo-hero {
+    width: auto;
+    object-fit: contain;
+}
+
+.organizer-logo-hero.bauru-logo {
+    margin-top: -6px;
+}
+
+@media (max-width: 900px) {
+    .features-grid {
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .logo-city-container {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 2rem !important;
+        margin-bottom: 0.1rem;
+    }
+
+    .hyphen-separator,
+    .hyphen-separator-home {
+        display: none !important;
+    }
+
+    .logo-top {
+        order: 1 !important;
+        height: 32px !important;
+    }
+
+    .city-name {
+        order: 2 !important;
+        font-size: 1.4rem;
+        margin-top: 0;
+    }
+
+    .organizer-logo-hero {
+        height: 40px !important;
+    }
+}
+
+/* Cronograma styles */
+.cronograma-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+    margin-bottom: 0.75rem; /* espaço entre imagem e botão */
+}
+
+.cronograma-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    .cronograma-container {
+        margin-top: 1rem;
+        padding: 0 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .cronograma-image {
+        max-width: 100%;
+    }
+}
+
+/* Ajustes de espaçamento entre botão e próxima seção */
+.important-dates-container {
+    padding-bottom: 0.75rem; /* reduz espaço abaixo do bloco de datas */
+}
+
+.important-dates-container .cta-dates {
+    margin-top: 2rem; /* aumenta distância entre imagem e botão */
+    margin-bottom: 1rem; /* reduz distância até a próxima seção */
+}
+
+@media (max-width: 900px) {
+    .important-dates-container .cta-dates {
+        margin-top: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+}

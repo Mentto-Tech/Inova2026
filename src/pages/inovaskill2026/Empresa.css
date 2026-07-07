@@ -8,7 +8,8 @@ body:has(.empresa-hero) .inovacao-aberta,
 body:has(.empresa-hero) .datasbolsatrilha,
 body:has(.empresa-hero) .footer {
   width: 100%;
-  left: 0;;
+  left: 0;
+  ;
   margin-left: 0;
   margin-right: 0;
   margin-top: 1rem;
@@ -66,6 +67,7 @@ body:has(.empresa-hero) .empresa-inscription {
 }
 
 @media (min-width: 1025px) {
+
   .empresa-hero,
   body:has(.empresa-hero) .empresa-hero {
     padding-left: 3.95rem;
@@ -76,7 +78,7 @@ body:has(.empresa-hero) .empresa-inscription {
 .empresa-hero-left {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.5rem;
   padding-left: 0;
   align-items: flex-start;
 }
@@ -90,7 +92,7 @@ body:has(.empresa-hero) .empresa-inscription {
 
 .empresa-hero-left .logo-top {
   height: 40px;
-  margin-bottom: 2rem;
+  margin-bottom: 0.25rem;
   margin-top: 1rem;
   align-self: flex-start;
 }
@@ -102,6 +104,7 @@ body:has(.empresa-hero) .empresa-inscription {
   line-height: 1.2;
   color: var(--text-primary);
   margin: 0;
+  margin-top: 1rem;
 }
 
 .empresa-hero-left h1 .accent {
@@ -184,17 +187,18 @@ body:has(.empresa-hero) .empresa-inscription {
     display: contents;
   }
 
-  .empresa-hero-left .logo-top {
+  .empresa-hero-left .logo-top,
+  .logo-city-container {
     order: 1;
   }
 
   .empresa-hero-right {
-    order: 2;
+    order: 3;
   }
 
   .empresa-hero-left h1 {
     font-size: 2.2rem;
-    order: 3;
+    order: 2;
   }
 
   .empresa-hero-left .lead {
@@ -229,6 +233,7 @@ body:has(.empresa-hero) .empresa-inscription {
     font-size: 0.95rem;
   }
 }
+
 /* Empresa Inscription Form Styles */
 .empresa-inscription {
   background: var(--bg);
@@ -428,7 +433,7 @@ body:has(.empresa-hero) .empresa-inscription {
 
   .form-group input,
   .form-group select {
-    
+
     font-size: 0.9rem;
     padding: 0.7rem 1rem;
   }
@@ -499,7 +504,8 @@ body:has(.empresa-hero) .empresa-inscription {
   }
 
   .empresa-hero-left .logo-top {
-    width: 150px;
+    height: 32px;
+    width: auto;
   }
 
   .empresa-hero-left h1 {
@@ -543,7 +549,8 @@ body:has(.empresa-hero) .empresa-inscription {
 /* Mobile Small */
 @media (max-width: 480px) {
   .empresa-hero-left .logo-top {
-    width: 120px;
+    height: 32px;
+    width: auto;
   }
 
   .empresa-hero-left h1 {
@@ -576,6 +583,7 @@ body:has(.empresa-hero) .empresa-inscription {
     font-size: 0.85rem;
   }
 }
+
 .success-message {
   color: #28a745;
   background-color: rgba(40, 167, 69, 0.1);

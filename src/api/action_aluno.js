@@ -1,5 +1,5 @@
-export const subscribeAluno = async (formData) => {
-  const GROUP_ID = "177207453211952799";
+export const subscribeAluno = async (formData, customGroupId = null) => {
+  const GROUP_ID = customGroupId || "177207453211952799";
 
   try {
     const response = await fetch("/api/subscribe", {

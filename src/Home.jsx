@@ -1,249 +1,383 @@
-import './App.css'
-import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import useScrollAnimation from './hooks/useScrollAnimation'
+import { useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
+import './Home.css'
+import './pages/inovaskill2026/Inovaskill2026.css'
 import Logo from './assets/inovaskill/LogoInova.svg'
-import Icon1 from './assets/Footerpage1/Vector-3.svg'
-import Icon2 from './assets/Footerpage1/Vector.svg'
-import Icon3 from './assets/Footerpage1/Vector-1.svg'
-import Icon4 from './assets/Footerpage1/Vector-2.svg'
+import cabecaImg from './assets/imagens/cabeca.png'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import useScrollAnimation from './hooks/useScrollAnimation'
+import Icon1 from './assets/Footerpage1/Vector-3Branco.svg'
+import Icon2 from './assets/Footerpage1/VectorBranco.svg'
+import Icon3 from './assets/Footerpage1/Vector-1Branco.svg'
+import Icon4 from './assets/Footerpage1/Vector-2Branco.svg'
 import organizacoes from './assets/pages/organizacoesparceiras.png'
-import footer from './assets/pages/footer.png'
 import empresasParticipantes from './assets/pages/empresasquejaparticiparaminova2026.png'
 import brainImg from './assets/imagens/brain.png'
-import cabecaImg from './assets/imagens/cabeca.png'
-import icon1 from './assets/icones/image 391.svg'
-import icon2 from './assets/icones/image 392.svg'
-import icon3 from './assets/icones/image 393.svg'
-import icon4 from './assets/icones/image 394.svg'
-import icon5 from './assets/icones/image 395.svg'
-import predioIcon from './assets/icones/predio.svg'
-import chapeuIcon from './assets/icones/chapeu.png'
-import editalPdf from './assets/pdf/Edital_InnovaSkill2026.pdf'
+import img2023 from './assets/imagens/2023.jpeg'
+import img2024 from './assets/imagens/2024.jpg'
+import img2025 from './assets/imagens/2025.jpg'
+// import citapLogo from './assets/inovaskill/citap.png' (Now in Footer component)
 
 export default function Home() {
+  const navigate = useNavigate();
   const heroRef = useScrollAnimation()
   const featuresRef = useScrollAnimation()
   const statsRef = useScrollAnimation()
   const pastCompaniesRef = useScrollAnimation()
-  const datesRef = useScrollAnimation()
   const howItWorksRef = useScrollAnimation()
   const organizacoesRef = useScrollAnimation()
-  const inscriptionRef = useScrollAnimation()
+  const objectivesRef = useScrollAnimation()
+  const editionsRef = useRef(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
+
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
   }, [])
 
   return (
-    <div className="site">
-      <section className="hero animate-fade-in" ref={heroRef}>
-        <div className="hero-left">
-          <img src={Logo} alt="logo" className="logo-top" />
-          <h1>
-            Inovação Aberta que Conecta <span className="accent">Empresas</span>,
-            <br /> <span className="accent">Universidades</span> e <span className="accent">Talentos</span>
-          </h1>
-
-          <p className="lead">
-            Programa de inovação aberta que <strong>conecta empresas, academias e talentos para
-            desenvolver soluções tecnológicas e de negócio </strong> voltadas a desafios reais do mercado.
-          </p>
-
-          <a className="cta" href="#inscription">Saiba mais</a>
-          {/* <a className="cta" href="#inscription">QUERO FAZER PARTE</a> */}
-        </div>
-
-        <div className="hero-right">
-          <div className="video-frame">
-            <img src={cabecaImg} alt="Inovação" />
+    <div className="home-wrapper">
+      <Header />
+      <br />
+      <div className="site-content">
+        {/* <section className="hero animate-fade-in" ref={heroRef}>
+          <div className="hero-left">
+            <h1>
+              Inovação Aberta que Conecta <span className="accent">Empresas</span>,
+              <br /> <span className="accent">Universidades</span> e <span className="accent">Talentos</span>
+            </h1>
+            <p className="lead">
+              Programa de inovação aberta que <strong>conecta empresas, academias e talentos para
+                desenvolver soluções tecnológicas e de negócio </strong> voltadas a desafios reais do mercado.
+            </p>
+            <button
+              className="cta"
+              onClick={() => editionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Saiba mais
+            </button>
           </div>
-        </div>
-      </section>
-      
-      <section className="features animate-fade-in-up" ref={featuresRef} aria-label="destaques">
-        <div className="features-grid">
-          <div className="feature-item">
-            <img src={Icon1} alt="Evento híbrido" className="feature-icon" />
-            <div>
-              <div className="feature-title">Evento híbrido</div>
-              <div className="feature-sub">Atividades presenciais e on-line</div>
+          <div className="hero-right">
+            <div className="video-frame">
+              <img src={cabecaImg} alt="Inovação" />
             </div>
           </div>
+        </section> */}
 
-          <div className="feature-item">
-            <img src={Icon2} alt="Duração de 6 meses" className="feature-icon" />
-            <div>
-              <div className="feature-title">Duração de 6 meses</div>
-              <div className="feature-sub">De abril à </div>
-              <div className="feature-sub">outubro de 2026</div>
+        <section
+          className="hero-section"
+          ref={heroRef}
+          style={{
+            backgroundImage: `linear-gradient(rgba(1, 6, 36, 0.8), rgba(1, 6, 36, 0.8)), url(${img2025})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <div className="hero-content animate-fade-in-up">
+            <h1 className="hero-title-modern">
+              <br />
+              Inovação Aberta que<br />
+              Conecta <span className="text-gradient">Empresas,</span><br />
+              <span className="text-gradient">Universidades e Talentos</span>
+            </h1>
+
+            <p className="hero-subtitle">O Programa InovaSkill habilita empresas e pesquisadores a transformarem desafios de negócios e pesquisa científica em soluções tecnológicas inovadoras.
+            </p>
+
+            <div className="hero-actions">
+              <button
+                className="primary-button"
+                onClick={() => editionsRef.current?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Conheça as edições anteriores
+                <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
             </div>
           </div>
+        </section>
 
-          <div className="feature-item">
-            <img src={Icon3} alt="Material personalizado" className="feature-icon" />
-            <div>
-              <div className="feature-title">Material personalizado</div>
-              <div className="feature-sub">Material de apoio e</div>
-              <div className="feature-sub">complementar gratuito</div>
+        <section className="features-modern" ref={featuresRef}>
+          <div className="features-grid-modern animate-fade-in-up">
+            <div className="feature-card">
+              <div className="feature-icon-wrapper blue-glow">
+                <img src={Icon1} alt="Programa híbrido" />
+              </div>
+              <h3>InovaSkill para Empresas</h3>
+              <p>Capacitação de empresas em intraempreendedorismo e metodologias de inovação, apoiando o desenvolvimento de projetos tecnológicos com potencial de geração de spin-offs.</p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon-wrapper cyan-glow">
+                <img src={Icon3} alt="Material personalizado" />
+              </div>
+              <h3>InovaSkill para Pesquisadores</h3>
+              <p>Instrumentalização de metodologias de  inovação a partir de pesquisas aplicadas, fomentando e apoiando  projetos com potencial de geração de empreendimentos de base científica e tecnológica (deep techs).</p>
+            </div>
+
+            <div className="feature-card highlight-card">
+              <div className="feature-icon-wrapper green-glow">
+                <img src={Icon4} alt="Gratuito" />
+              </div>
+              <h3>100% Gratuito</h3>
+              <p>Acesso totalmente livre para os alunos</p>
             </div>
           </div>
+        </section>
 
-          <div className="feature-item-gratis">
-            <img src={Icon4} alt="Gratuito" className="feature-icon" />
-            <div>
-              <div className="feature-title">100% gratuito</div> 
-              <div className="feature-title">para alunos</div>
+        <section className="stats-modern" ref={statsRef}>
+          <div className="stats-container-modern animate-fade-in-up">
+            <div className="glass-panel">
+              <div className="stat-box">
+                <h4 className="counter">+30</h4>
+                <p>Empresas já participaram</p>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-box">
+                <h4 className="counter">+350</h4>
+                <p>Participantes Impactados</p>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-box">
+                <h4 className="counter">+500</h4>
+                <p>Horas de mentoria e tutoria realizadas</p>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-box">
+                <h4 className="counter">40%</h4>
+                <p>Dos alunos participantes já contratados</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="stats animate-fade-in-up" ref={statsRef}>
-        <div className="stats-container">
-          <p className="stats-intro">
-            <strong>Programa de inovação aberta que conecta empresas e estudantes para <span className="accent">desenvolver
-            soluções tecnológicas e de negócio</span> voltadas a <span className="accent">desafios reais do mercado</span></strong>
-          </p>
-
-          <div className="stats-grid">
-            <div className="stat-item">
-              <div className="stat-number">30</div>
-              <div className="stat-label">Empresas<br />Já participaram</div>
+        <section className="objectives-section animate-fade-in-up" ref={objectivesRef}>
+          <div className="section-header">
+            <h2>Objetivos do Programa</h2>
+          </div>
+          <div className="objectives-grid">
+            <div className="objective-card">
+              <div className="objective-card-header">
+                <div className="objective-icon-box blue">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                  </svg>
+                </div>
+                <h4>Spinoffs</h4>
+              </div>
+              <p>Gerar Spinoffs acadêmicas e corporativas.</p>
             </div>
 
-            <div className="stat-item">
-              <div className="stat-number">+350</div>
-              <div className="stat-label">Participantes impactados</div>
+            <div className="objective-card">
+              <div className="objective-card-header">
+                <div className="objective-icon-box cyan">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+                  </svg>
+                </div>
+                <h4>Encurtar Gap Academia/Mercado</h4>
+              </div>
+              <p>Encurtar o gap entre academia e mercado</p>
             </div>
 
-            <div className="stat-item">
-              <div className="stat-number">+500</div>
-              <div className="stat-label">Horas de mentorias<br />e acompanhamentos<br />realizadas</div>
+            <div className="objective-card">
+              <div className="objective-card-header">
+                <div className="objective-icon-box purple">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                  </svg>
+                </div>
+                <h4>Cultura de Inovação</h4>
+              </div>
+              <p>Estimular uma cultura de inovação dentro das empresas participantes</p>
             </div>
 
-            <div className="stat-item">
-              <div className="stat-number">42</div>
-              <div className="stat-label">Projetos Inovadores<br />desenvolvidos</div>
+            <div className="objective-card">
+              <div className="objective-card-header">
+                <div className="objective-icon-box green">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                </div>
+                <h4>Desenvolvimento</h4>
+              </div>
+              <p>Desenvolver competências em inovação e intraempreendedorismo</p>
             </div>
 
-            <div className="stat-item">
-              <div className="stat-number">40%</div>
-              <div className="stat-label">Dos alunos participantes<br />já contratados</div>
+            <div className="objective-card">
+              <div className="objective-card-header">
+                <div className="objective-icon-box cyan">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                  </svg>
+                </div>
+                <h4>Projetos Inovadores</h4>
+              </div>
+              <p>Apoio na ideação, concepção, prototipação e desenvolvimento de projetos de inovação</p>
             </div>
           </div>
-        </div>
-      </section>
-    
-      <section className="past-companies animate-fade-in-up" ref={pastCompaniesRef}>
-        <div className="past-companies-container">
-          <h2 className="past-companies-title">Já Passaram pelo Programa</h2>
-          <img
-            src={empresasParticipantes}
-            alt="Empresas que já participaram do programa Inova 2026"
-            className="past-companies-image"
-          />
-        </div>
-      </section>
+        </section>
 
-      <section className="important-dates animate-fade-in-up" ref={datesRef}>
-        <div className="important-dates-container">
-          <h2>Datas Importantes!</h2>
-          <div className="dates-grid">
-            <div className="date-item">
-              <img src={icon1} alt="Período de inscrições" className="date-icon" />
-              <div className="date-label">09/02 a 23/03</div>
-              <div className="date-title">Período de inscrições</div>
-            </div>
-
-            <div className="date-item">
-              <img src={icon2} alt="Período de análise" className="date-icon" />
-              <div className="date-label">23/03 a 24/03</div>
-              <div className="date-title">Período de análise das inscrições</div>
-            </div>
-
-            <div className="date-item">
-              <img src={icon3} alt="Divulgação dos candidatos" className="date-icon" />
-              <div className="date-label">25/03</div>
-              <div className="date-title">Divulgação dos candidatos selecionados</div>
-            </div>
-
-            <div className="date-item">
-              <img src={icon4} alt="Prazo final" className="date-icon" />
-              <div className="date-label">27/03</div>
-              <div className="date-title">Prazo final para confirmação do interesse no programa</div>
-            </div>
-
-            <div className="date-item">
-              <img src={icon5} alt="Evento kick-off" className="date-icon" />
-              <div className="date-label">28/03</div>
-              <div className="date-title">Evento kick-off do programa</div>
-            </div>
+        <section className="partners-section animate-fade-in-up" ref={pastCompaniesRef}>
+          <div className="section-header">
+            <h2>Ecossistema de Inovação</h2>
+            <p>O Programa InovaSkill conecta atores de hélice quádrupla no apoio à inovação</p>
           </div>
 
-          <a className="cta cta-dates" href={editalPdf} download="Edital_InnovaSkill2026.pdf">Clique aqui para acessar o edital!</a>
-        </div>
-      </section>
-
-      <section className="how-it-works animate-fade-in-up" ref={howItWorksRef}>
-        <div className="how-it-works-container">
-          <div className="how-it-works-image">
-            <img src={brainImg} alt="Como vai funcionar" />
+          <div className="partners-track">
+            <div className="partner-card" ref={organizacoesRef}>
+              <h3 className="partner-title">Organizações Parceiras</h3>
+              <img src={organizacoes} alt="Organizações Parceiras" />
+            </div>
           </div>
-          <div className="how-it-works-content">
-            <h2>Como vai Funcionar:</h2>
-            <ul className="how-it-works-list">
-              <li>Duração de 6 meses;</li>
-              <li>Conteúdos dinâmicos;</li>
-              <li>Webinars com cases de sucesso;</li>
-              <li>Atividades práticas;</li>
-              <li>Suporte especializado durante todo o programa;</li>
-              <li>Desenvolvimento de projetos de empreendedorismo ou inovação aberta;</li>
-              <li>Mentoria durante o desenvolvimento do projeto;</li>
-              <li>Material de apoio e complementar.</li>
-            </ul>
-            {/* <a className="cta" href="#inscription">QUERO FAZER PARTE</a> */}
-            <a className="cta" href="#inscription">Saiba mais</a>
+        </section>
+
+        <section className="info-section animate-fade-in-up" ref={howItWorksRef}>
+          <div className="info-layout">
+            <div className="info-image-wrapper glass-card floating">
+              <img src={brainImg} alt="Como vai funcionar" className="cover-img" />
+            </div>
+            <div className="info-text">
+              <h2>Como Funciona o Programa</h2>
+              <p className="lead-text">O programa é estruturado para maximizar sua imersão e aprendizado.</p>
+              <ul className="modern-list">
+                <li><span className="check">✓</span> <span>Conteúdos dinâmicos e atualizados</span></li>
+                <li><span className="check">✓</span> <span>Webinars exclusivos com cases reais</span></li>
+                <li><span className="check">✓</span> <span>Atividades focadas na prática do mercado</span></li>
+                <li><span className="check">✓</span> <span>Suporte contínuo de especialistas</span></li>
+                <li><span className="check">✓</span> <span>Mentoria direta durante os projetos</span></li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className='organizacoes animate-fade-in-up' ref={organizacoesRef}>
-        <div className="organizacoes-container">
-          <h2 className="organizacoes-title">Parceiros do Programa</h2>
-          <img src={organizacoes} alt="Organizações Parceiras" className="organizacoes-image" />
-        </div>
-      </section>
-
-      <section className="inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
-        <div className="inscription-container">
-          {/* <h2>Inscrição para a Edição 2026</h2> */}
-          <h2>Entenda um pouco mais sobre essa iniciativa</h2>
-          {/* <p className="inscription-subtitle">Escolha a baixo qual vai ser seu time durante essa jornada</p> */}
-          <p className="inscription-subtitle">Saiba mais sobre a estrutura dos times do programa</p>
-
-          <div className="inscription-cards">
-            <Link to="/empresa" className="inscription-card card-empresa">
-              {/* <div className="card-label">Quero inscrever minha empresa</div> */}
-              <h3>EMPRESA</h3>
-              <img src={predioIcon} alt="Empresa" className="card-icon" />
-              <span className="card-button">CLIQUE AQUI</span>
-            </Link>
-
-            <Link to="/aluno" className="inscription-card card-aluno">
-              {/* <div className="card-label">Quero me inscrever como</div> */}
-              <h3>ALUNO</h3>
-              <img src={chapeuIcon} alt="Aluno" className="card-icon" />
-              <span className="card-button">CLIQUE AQUI</span>
-            </Link>
+        <section className="editions-section animate-fade-in-up" ref={editionsRef}>
+          <div className="section-header">
+            <h2>Edições Anteriores</h2>
+            <p>Edições que transformaram o ecossistema de inovação da região da Alta Paulista</p>
           </div>
-        </div>
-      </section>
 
-      <section className='footer'>
-        <img src={footer} alt="Footer" />
-      </section>
+          <div className="editions-timeline">
 
+            {/* 2025 */}
+            <div className="edition-row">
+              <div className="edition-year-col">
+                <div className="edition-year-badge blue">2025</div>
+                <div className="edition-line"></div>
+              </div>
+              <div className="edition-body glow-card-blue">
+                <div className="edition-header-row">
+                  <div>
+                    <span className="edition-tag">3ª Edição</span>
+                    <h3>Bolsas, Empregabilidade e Apoio do Estado</h3>
+                  </div>
+                  <a href="https://fsnt.org.br/2025/12/programa-inovaskill-2025-garante-bolsas-e-contratacao-para-alunos-da-fatec-pompeia/" target="_blank" rel="noreferrer" className="edition-link-btn">Ver matéria →</a>
+                </div>
+                <img src={img2025} alt="InovaSkill 2025" className="edition-img" />
+                <p className="edition-description">
+                  Em parceria com a <strong>Adipa</strong> e o <strong>Programa SP Produz</strong> da Secretaria de Desenvolvimento Econômico de São Paulo, a terceira edição subsidiou a participação de empresas e concedeu <strong>bolsas de pesquisa e inovação</strong> para alunos dos cursos de Tecnologia em Sistemas Inteligentes, Big Data no Agronegócio e Mecanização em Agricultura de Precisão.
+                </p>
+                <div className="edition-stats-row">
+                  <div className="edition-stat">
+                    <span className="e-num">+20</span>
+                    <span className="e-label">Empresas participantes</span>
+                  </div>
+                  <div className="edition-stat">
+                    <span className="e-num">+40</span>
+                    <span className="e-label">Alunos participantes</span>
+                  </div>
+                  <div className="edition-stat">
+                    <span className="e-num">50%</span>
+                    <span className="e-label">Dos alunos já contratados</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2024 */}
+            <div className="edition-row">
+              <div className="edition-year-col">
+                <div className="edition-year-badge cyan">2024</div>
+                <div className="edition-line"></div>
+              </div>
+              <div className="edition-body glow-card-cyan">
+                <div className="edition-header-row">
+                  <div>
+                    <span className="edition-tag cyan-tag">2ª Edição</span>
+                    <h3>Escalando a Inovação Aberta</h3>
+                  </div>
+                  <a href="https://fsnt.org.br/2024/04/__trashed-2/" target="_blank" rel="noreferrer" className="edition-link-btn cyan-btn">Ver matéria →</a>
+                </div>
+                <img src={img2024} alt="InovaSkill 2024" className="edition-img" />
+                <p className="edition-description">
+                  A segunda edição trouxe o conceito de <strong>ambidestria organizacional</strong> com palestras do CEO da Bluefields Aceleradora, Paulo Humaitá, do Parque Tecnológico de São José dos Campos. Os times foram orientados a identificar oportunidades e desenvolver soluções disruptivas, culminando no <strong>InovaSkill Pitch Day</strong> diante de investidores e grandes empresas.
+                </p>
+                <div className="edition-stats-row">
+                  <div className="edition-stat">
+                    <span className="e-num">+10</span>
+                    <span className="e-label">Empresas participantes</span>
+                  </div>
+                  <div className="edition-stat">
+                    <span className="e-num">+40</span>
+                    <span className="e-label">Alunos participantes</span>
+                  </div>
+                  <div className="edition-stat">
+                    <span className="e-num">+100</span>
+                    <span className="e-label">Participantes no Pitch Day</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 2023 */}
+            <div className="edition-row last-row">
+              <div className="edition-year-col">
+                <div className="edition-year-badge purple">2023</div>
+              </div>
+              <div className="edition-body glow-card-purple">
+                <div className="edition-header-row">
+                  <div>
+                    <span className="edition-tag purple-tag">1ª Edição</span>
+                    <h3>A Origem do Impacto</h3>
+                  </div>
+                  <a href="https://fsnt.org.br/2023/04/primeiro-encontro-do-programa-inova-skill-2023/" target="_blank" rel="noreferrer" className="edition-link-btn purple-btn">Ver matéria →</a>
+                </div>
+                <img src={img2023} alt="InovaSkill 2023" className="edition-img" />
+                <p className="edition-description">
+                  O programa nasceu com o objetivo de desenvolver <strong>competências em empreendedorismo e inovação</strong> nos alunos do ecossistema FSNT — Fatec, Senai e Colégio Shunji Nishimura — em parceria com o <strong>Grupo Jacto</strong>. O primeiro encontro trouxe Vitor Ferreira, head de inovação do Startup Leiria/Portugal, com um conteúdo exclusivo sobre Criatividade e Inovação.
+                </p>
+                <div className="edition-stats-row">
+                  <div className="edition-stat">
+                    <span className="e-num">3</span>
+                    <span className="e-label">Instituições acadêmicas</span>
+                  </div>
+                  <div className="edition-stat">
+                    <span className="e-num">2023</span>
+                    <span className="e-label">Primeira edição do programa</span>
+                  </div>
+                  <div className="edition-stat">
+                    <span className="e-num">100%</span>
+                    <span className="e-label">Gratuito para Alunos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+      <Footer showCitap={true} />
     </div>
   )
 }

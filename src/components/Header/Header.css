@@ -1,0 +1,237 @@
+.home-novo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 5rem;
+  background: #010624;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-bottom: 1px solid transparent;
+  font-family: 'Outfit', sans-serif;
+}
+
+.home-novo-header.scrolled {
+  padding: 1rem 5rem;
+  background: rgba(1, 6, 36, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-container h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(130deg, #12a9b7, #00AFEF, #19dcf2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+  letter-spacing: -0.5px;
+}
+
+.logo-glow {
+  position: absolute;
+  width: 200px;
+  height: 10px;
+  background: var(--accent, #00AFEF);
+  filter: blur(25px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  left: -20px;
+}
+
+.logo-container:hover .logo-glow {
+  opacity: 0.6;
+}
+
+.header-logo {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.header-logo-geral {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.logo-container:hover .header-logo,
+.logo-container:hover .header-logo-geral {
+  transform: scale(1.05);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.custom-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-modern-select {
+  padding: 0.5rem 1.5rem 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Outfit', sans-serif;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  min-width: 220px;
+  backdrop-filter: blur(5px);
+}
+
+.nav-modern-select:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 175, 239, 0.2);
+  transform: translateY(-1px);
+}
+
+.custom-select-wrapper.open .nav-modern-select {
+  border-color: #00AFEF;
+  background: rgba(0, 175, 239, 0.05);
+  box-shadow: 0 0 20px rgba(0, 175, 239, 0.2);
+}
+
+.select-options-container {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: rgba(1, 6, 36, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1001;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  animation: dropdownFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top center;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.select-option {
+  padding: 0.5rem 1.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+}
+
+.select-option:last-child {
+  border-bottom: none;
+}
+
+.select-option:hover {
+  background: rgba(0, 175, 239, 0.15);
+  color: white;
+  padding-left: 2.2rem;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 1.5rem;
+  pointer-events: none;
+  color: #00AFEF;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+}
+
+.custom-select-wrapper.open .select-arrow {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .home-novo-header {
+    padding: 0.8rem 1.25rem;
+  }
+
+  .home-novo-header.scrolled {
+    padding: 0.8rem 1.25rem;
+  }
+
+  .logo-container h2 {
+    font-size: 1.4rem;
+  }
+
+  .header-logo {
+    height: 24px;
+  }
+
+  .header-logo-geral {
+    height: 30px;
+  }
+
+  .nav-modern-select {
+    padding: 0.5rem 1.8rem 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    min-width: 140px;
+    max-width: 180px;
+  }
+
+  .nav-modern-select span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+
+  .select-arrow {
+    right: 0.6rem;
+  }
+
+  .select-options-container {
+    border-radius: 15px;
+  }
+
+  .select-option {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}

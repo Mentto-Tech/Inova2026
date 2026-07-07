@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import footer from '../assets/pages/footer.png'
-import Logo from '../assets/inovaskill/LogoInova.svg'
-import trilhas2 from '../assets/pages/trilhas2.png'
-import '../animations.css'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
+import Logo from '../../assets/inovaskill/LogoInova.svg'
+import trilhas2 from '../../assets/pages/trilhas2.png'
+import './animations.css'
 import './Empresa.css'
-import useScrollAnimation from '../hooks/useScrollAnimation'
-import { subscribeEmpresa } from '../api/action_empresa'
-import imagemCentro from '../assets/imagens/imagemCentro.png'
+import useScrollAnimation from '../../hooks/useScrollAnimation'
+import { subscribeEmpresa } from '../../api/action_empresa'
+import imagemCentro from '../../assets/imagens/imagemCentro.png'
 
 const digitsOnly = (value = '') => value.replace(/\D+/g, '')
 
@@ -139,10 +140,12 @@ export default function Empresa() {
   }, [])
   return (
     <>
+      <Header />
+      <div style={{ height: '50px' }}></div>
       <section className="empresa-hero animate-fade-in" ref={heroRef}>
         <div className="empresa-hero-left">
           <img src={Logo} alt="logo" className="logo-top" />
-          <h1>
+          <h1 className="h1-title">
             Eleve a <span className="accent">Inovação</span> e
             <br /> <span className="accent">Competitividade</span> da
             <br /> Sua Empresa
@@ -150,7 +153,7 @@ export default function Empresa() {
 
           <p className="lead">
             Prepare sua equipe para <strong>pensar e agir de forma mais empreendedora, aumentando a capacidade
-            de inovação</strong> no dia a dia do negócio.
+              de inovação</strong> no dia a dia do negócio.
           </p>
 
           {/* <p className="lead">*/}
@@ -159,7 +162,7 @@ export default function Empresa() {
             decisões e gerar resultado real.
           </p>
 
-          {/* <a className="cta" href="/empresa#inscription">QUERO FAZER A PRÉ-INSCRIÇÃO DA MINHA EMPRESA</a> */}
+          {/* <a className="cta" href="/inovaskill2026/empresa#inscription">QUERO FAZER A PRÉ-INSCRIÇÃO DA MINHA EMPRESA</a> */}
         </div>
 
         <div className="empresa-hero-right">
@@ -256,6 +259,9 @@ export default function Empresa() {
                   required 
                 />
               </div>
+            </div>
+
+            <div className="form-row">
               <div className="form-group">
                 <label htmlFor="ramo">Ramo de atuação da empresa:</label>
                 <input 
@@ -263,6 +269,17 @@ export default function Empresa() {
                   id="ramo" 
                   name="ramo" 
                   value={formData.ramo}
+                  onChange={handleChange}
+                  required 
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="cidade">Cidade:</label>
+                <input 
+                  type="text" 
+                  id="cidade" 
+                  name="cidade" 
+                  value={formData.cidade}
                   onChange={handleChange}
                   required 
                 />
@@ -299,7 +316,7 @@ export default function Empresa() {
                   <option value="">Selecione</option>
                   <option value="CIESP">CIESP</option>
                   <option value="ADIPA">ADIPA</option>
-                  <option value="ADIPA">ASSERTI</option>
+                  <option value="ASSERTI">ASSERTI</option>
                   <option value="Nenhum">Nenhum</option>
                 </select>
               </div>
@@ -322,9 +339,7 @@ export default function Empresa() {
         </div>
       </section> */}
 
-      <section className='footer'>
-        <img src={footer} alt="footer" />
-      </section>
+      <Footer />
     </>
   )
 }
