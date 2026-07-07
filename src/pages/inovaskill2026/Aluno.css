@@ -28,8 +28,12 @@
   height: 40px;
   width: auto;
   margin-bottom: 0.25rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   align-self: flex-start;
+}
+
+.aluno-hero-left .hyphen-separator-city-adjusted {
+  margin-top: 1.3rem;
 }
 
 .aluno-hero-left h1 {

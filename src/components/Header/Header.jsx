@@ -35,10 +35,16 @@ export default function Header() {
         }
     }, [location.pathname]);
 
-    const handleSelect = (option) => {
+    const handleSelect = (option, event) => {
         setSelectedOption(option.label);
         setIsOpen(false);
-        navigate(option.value);
+        
+        // Ctrl+Click ou Middle click (scroll) abre em nova aba
+        if (event.ctrlKey || event.metaKey || event.button === 1) {
+            window.open(option.value, '_blank');
+        } else {
+            navigate(option.value);
+        }
     };
 
     // Close dropdown when clicking outside
@@ -78,7 +84,14 @@ export default function Header() {
                                 <div
                                     key={option.value}
                                     className="select-option"
-                                    onClick={() => handleSelect(option)}
+                                    onClick={(e) => handleSelect(option, e)}
+                                    onMouseDown={(e) => {
+                                        // Permite middle click sem fechar o dropdown
+                                        if (e.button === 1) {
+                                            e.preventDefault();
+                                            handleSelect(option, e);
+                                        }
+                                    }}
                                 >
                                     {option.label}
                                 </div>

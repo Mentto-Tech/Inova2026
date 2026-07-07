@@ -36,6 +36,7 @@ export default function SpaiEmpresaTemplate({ city, groupId }) {
   const heroRef = useScrollAnimation()
   const inscriptionRef = useScrollAnimation()
   const trilhasRef = useScrollAnimation()
+  const showEnrollmentForm = !['Bauru', 'Assis'].includes(city)
 
   const [formData, setFormData] = useState({
     nome: '',
@@ -117,13 +118,13 @@ export default function SpaiEmpresaTemplate({ city, groupId }) {
         <div className="empresa-hero-left">
           <div className="logo-city-container">
             <img src={Logo} alt="logo" className="logo-top" />
-            <span className="hyphen-separator">-</span>
+            <span className={`hyphen-separator ${['Bauru', 'Assis'].includes(city) ? 'hyphen-separator-city-adjusted' : ''}`}>-</span>
             <span className="city-name">
               {cityData[city] && (
                 <img
                   src={cityData[city].logo}
                   alt={cityData[city].organizer}
-                  className="organizer-logo-hero"
+                  className={`organizer-logo-hero ${city === 'Bauru' ? 'bauru-logo' : ''}`}
                   style={{ height: cityData[city].logoHeight || '35px' }}
                 />
               )}
@@ -171,87 +172,93 @@ export default function SpaiEmpresaTemplate({ city, groupId }) {
       <section className="empresa-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
         <div className="empresa-inscription-container">
           <h2>Faça a Pré-Inscrição da sua Empresa no InovaSkill de {city}:</h2>
-          <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
+          {showEnrollmentForm ? (
+            <>
+              <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
 
-          <form className="empresa-form" onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="nome">Seu nome completo:</label>
-                <input type="text" id="nome" name="nome" value={formData.nome} onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">E-mail para contato:</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-              </div>
-            </div>
+              <form className="empresa-form" onSubmit={handleSubmit}>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="nome">Seu nome completo:</label>
+                    <input type="text" id="nome" name="nome" value={formData.nome} onChange={handleChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="email">E-mail para contato:</label>
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+                  </div>
+                </div>
 
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="telefone">Telefone/WhatsApp:</label>
-                <input type="tel" id="telefone" name="telefone" value={formData.telefone} onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="cargo">Cargo:</label>
-                <input type="text" id="cargo" name="cargo" value={formData.cargo} onChange={handleChange} required />
-              </div>
-            </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="telefone">Telefone/WhatsApp:</label>
+                    <input type="tel" id="telefone" name="telefone" value={formData.telefone} onChange={handleChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="cargo">Cargo:</label>
+                    <input type="text" id="cargo" name="cargo" value={formData.cargo} onChange={handleChange} required />
+                  </div>
+                </div>
 
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="empresa">Nome da empresa:</label>
-                <input type="text" id="empresa" name="empresa" value={formData.empresa} onChange={handleChange} required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="ramo">Ramo de atuação da empresa:</label>
-                <input type="text" id="ramo" name="ramo" value={formData.ramo} onChange={handleChange} required />
-              </div>
-            </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="empresa">Nome da empresa:</label>
+                    <input type="text" id="empresa" name="empresa" value={formData.empresa} onChange={handleChange} required />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="ramo">Ramo de atuação da empresa:</label>
+                    <input type="text" id="ramo" name="ramo" value={formData.ramo} onChange={handleChange} required />
+                  </div>
+                </div>
 
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="cidade">Cidade:</label>
-                <input type="text" id="cidade" name="cidade" value={formData.cidade} readOnly required />
-              </div>
-            </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" value={formData.cidade} readOnly required />
+                  </div>
+                </div>
 
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="porte">Porte da empresa:</label>
-                <select id="porte" name="porte" value={formData.porte} onChange={handleChange} required >
-                  <option value="">Selecione</option>
-                  <option value="micro">Microempresa</option>
-                  <option value="pequena">Pequena Empresa</option>
-                  <option value="media">Média Empresa</option>
-                  <option value="grande">Grande Empresa</option>
-                </select>
-              </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="porte">Porte da empresa:</label>
+                    <select id="porte" name="porte" value={formData.porte} onChange={handleChange} required >
+                      <option value="">Selecione</option>
+                      <option value="micro">Microempresa</option>
+                      <option value="pequena">Pequena Empresa</option>
+                      <option value="media">Média Empresa</option>
+                      <option value="grande">Grande Empresa</option>
+                    </select>
+                  </div>
 
-              <div className="form-group">
-                <label htmlFor="associada">Associada a:</label>
-                <select id="associada" name="associada" value={formData.associada} onChange={handleChange} required >
-                  <option value="">Selecione</option>
-                  {/* <option value="CIESP">CIESP</option>
-                  <option value="ADIPA">ADIPA</option>
-                  <option value="ASSERTI">ASSERTI</option> */}
-                  <option value="Nenhum">Nenhum</option>
-                </select>
-              </div>
-            </div>
+                  <div className="form-group">
+                    <label htmlFor="associada">Associada a:</label>
+                    <select id="associada" name="associada" value={formData.associada} onChange={handleChange} required >
+                      <option value="">Selecione</option>
+                      {/* <option value="CIESP">CIESP</option>
+                      <option value="ADIPA">ADIPA</option>
+                      <option value="ASSERTI">ASSERTI</option> */}
+                      <option value="Nenhum">Nenhum</option>
+                    </select>
+                  </div>
+                </div>
 
-            <div className="form-checkbox-empresa">
-              <input type="checkbox" id="termos" name="termos" required />
-              <label htmlFor="termos">
-                Declaro que li e aceito os <a href="https://mentto.com.br/termos-de-uso-e-politicas-de-privacidade" className="link-termos" target="_blank">Termos de Uso e Políticas de Privacidade</a>
-              </label>
-            </div>
+                <div className="form-checkbox-empresa">
+                  <input type="checkbox" id="termos" name="termos" required />
+                  <label htmlFor="termos">
+                    Declaro que li e aceito os <a href="https://mentto.com.br/termos-de-uso-e-politicas-de-privacidade" className="link-termos" target="_blank">Termos de Uso e Políticas de Privacidade</a>
+                  </label>
+                </div>
 
-            {success && <p className="success-message">Inscrição da empresa realizada com sucesso!</p>}
-            {error && <p className="error-message">{error}</p>}
+                {success && <p className="success-message">Inscrição da empresa realizada com sucesso!</p>}
+                {error && <p className="error-message">{error}</p>}
 
-            <button type="submit" className="form-submit" disabled={loading}>
-              {loading ? 'ENVIANDO...' : 'ENVIAR'}
-            </button>
-          </form>
+                <button type="submit" className="form-submit" disabled={loading}>
+                  {loading ? 'ENVIANDO...' : 'ENVIAR'}
+                </button>
+              </form>
+            </>
+          ) : (
+            <p className="inscription-subtitle">(Em breve)</p>
+          )}
         </div>
       </section>
 

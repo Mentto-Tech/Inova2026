@@ -17,6 +17,7 @@ import icon3 from '../../assets/icones/image 393.svg'
 import icon4 from '../../assets/icones/image 394.svg'
 import icon5 from '../../assets/icones/image 395.svg'
 import editalPdf from '../../assets/pdf/Edital_InnovaSkill2026.pdf'
+import cronogramaAracatuba from '../../assets/Cronogramas/cronogramaAracatuba.png'
 
 const digitsOnly = (value = '') => value.replace(/\D+/g, '')
 const isValidEmail = (email = '') => /.+@.+\..+/.test(email.trim().toLowerCase())
@@ -59,6 +60,7 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
   const bolsaRef = useScrollAnimation()
   const trilhasRef = useScrollAnimation()
   const inscriptionRef = useScrollAnimation()
+  const showEnrollmentForm = !['Bauru', 'Assis'].includes(city)
 
   const [formData, setFormData] = useState({
     nome: '',
@@ -145,13 +147,13 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
           <div className="aluno-hero-left">
             <div className="logo-city-container">
               <img src={Logo} alt="logo" className="logo-top" />
-              <span className="hyphen-separator">-</span>
+              <span className={`hyphen-separator ${['Bauru', 'Assis'].includes(city) ? 'hyphen-separator-city-adjusted' : ''}`}>-</span>
               <span className="city-name">
                 {cityData[city] && (
                   <img
                     src={cityData[city].logo}
                     alt={cityData[city].organizer}
-                    className="organizer-logo-hero"
+                    className={`organizer-logo-hero ${city === 'Bauru' ? 'bauru-logo' : ''}`}
                     style={{ height: cityData[city].logoHeight || '35px' }}
                   />
                 )}
@@ -191,40 +193,20 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
 
         <section className="important-dates animate-fade-in-up" ref={datesRef}>
           <div className="important-dates-container">
-            <h2>Datas Importantes! (em breve)</h2>
-            {/* <div className="dates-grid">
-              <div className="date-item">
-                <img src={icon1} alt="Período de inscrições" className="date-icon" />
-                <div className="date-label">09/02 a 23/03</div>
-                <div className="date-title">Período de inscrições</div>
-              </div>
-
-              <div className="date-item">
-                <img src={icon2} alt="Período de análise" className="date-icon" />
-                <div className="date-label">23/03 a 24/03</div>
-                <div className="date-title">Período de análise das inscrições</div>
-              </div>
-
-              <div className="date-item">
-                <img src={icon3} alt="Divulgação dos candidatos" className="date-icon" />
-                <div className="date-label">25/03</div>
-                <div className="date-title">Divulgação dos candidatos selecionados</div>
-              </div>
-
-              <div className="date-item">
-                <img src={icon4} alt="Prazo final" className="date-icon" />
-                <div className="date-label">27/03</div>
-                <div className="date-title">Prazo final para confirmação do interesse no programa</div>
-              </div>
-
-              <div className="date-item">
-                <img src={icon5} alt="Evento kick-off" className="date-icon" />
-                <div className="date-label">28/03</div>
-                <div className="date-title">Evento kick-off do programa</div>
-              </div> 
-          </div> */}
-
-            <a className="cta cta-dates" href={editalPdf} target="_blank" rel="noopener noreferrer">Clique aqui para acessar o edital!</a>
+            {city === 'Araçatuba' ? (
+              <>
+                <h2>Datas Importantes</h2>
+                <div className="cronograma-container">
+                  <img src={cronogramaAracatuba} alt="Cronograma Araçatuba" className="cronograma-image" />
+                </div>
+                <a className="cta cta-dates" href={editalPdf} target="_blank" rel="noopener noreferrer">Clique aqui para acessar o edital</a>
+              </>
+            ) : (
+              <>
+                <h2>Datas Importantes! (em breve)</h2>
+                <a className="cta cta-dates" href={editalPdf} target="_blank" rel="noopener noreferrer">Clique aqui para acessar o edital!</a>
+              </>
+            )}
           </div>
         </section >
 
@@ -262,80 +244,86 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
         <section className="aluno-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
           <div className="aluno-inscription-container">
             <h2>Faça sua Pré-Inscrição no InovaSkill em {city}:</h2>
-            <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
+            {showEnrollmentForm ? (
+              <>
+                <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
 
-            <form className="aluno-form" onSubmit={handleSubmit}>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="nome">Seu nome completo:</label>
-                  <input type="text" id="nome" name="nome" value={formData.nome} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="email">E-mail para contato:</label>
-                  <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-                </div>
-              </div>
+                <form className="aluno-form" onSubmit={handleSubmit}>
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="nome">Seu nome completo:</label>
+                      <input type="text" id="nome" name="nome" value={formData.nome} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="email">E-mail para contato:</label>
+                      <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+                    </div>
+                  </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="telefone">Telefone/WhatsApp:</label>
-                  <input type="tel" id="telefone" name="telefone" value={formData.telefone} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="instituicao">Instituição de ensino:</label>
-                  <input type="text" id="instituicao" name="instituicao" value={formData.instituicao} onChange={handleChange} required />
-                </div>
-              </div>
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="telefone">Telefone/WhatsApp:</label>
+                      <input type="tel" id="telefone" name="telefone" value={formData.telefone} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="instituicao">Instituição de ensino:</label>
+                      <input type="text" id="instituicao" name="instituicao" value={formData.instituicao} onChange={handleChange} required />
+                    </div>
+                  </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="curso">Curso:</label>
-                  <input type="text" id="curso" name="curso" value={formData.curso} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="termo">Termo:</label>
-                  <input type="text" id="termo" name="termo" value={formData.termo} onChange={handleChange} required />
-                </div>
-              </div>
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="curso">Curso:</label>
+                      <input type="text" id="curso" name="curso" value={formData.curso} onChange={handleChange} required />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="termo">Termo:</label>
+                      <input type="text" id="termo" name="termo" value={formData.termo} onChange={handleChange} required />
+                    </div>
+                  </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="cidade">Cidade:</label>
-                  <input type="text" id="cidade" name="cidade" value={formData.cidade} readOnly required />
-                </div>
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="cidade">Cidade:</label>
+                      <input type="text" id="cidade" name="cidade" value={formData.cidade} readOnly required />
+                    </div>
 
-                <div className="form-group">
-                  <label htmlFor="cpf">CPF:</label>
-                  <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" value={formData.cpf} onChange={handleChange} required />
-                </div>
-              </div>
+                    <div className="form-group">
+                      <label htmlFor="cpf">CPF:</label>
+                      <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" value={formData.cpf} onChange={handleChange} required />
+                    </div>
+                  </div>
 
-              <div className="cpf-info">
-                <h4>Por que pedimos seu CPF?</h4>
-                <p>O CPF é solicitado exclusivamente para fins de identificação do participante, formalização da participação no programa e cumprimento de exigências institucionais relacionadas à bolsa e/ou certificação. Os dados serão tratados conforme a Lei Geral de Proteção de Dados (LGPD) e não serão utilizados para fins comerciais.</p>
-              </div>
+                  <div className="cpf-info">
+                    <h4>Por que pedimos seu CPF?</h4>
+                    <p>O CPF é solicitado exclusivamente para fins de identificação do participante, formalização da participação no programa e cumprimento de exigências institucionais relacionadas à bolsa e/ou certificação. Os dados serão tratados conforme a Lei Geral de Proteção de Dados (LGPD) e não serão utilizados para fins comerciais.</p>
+                  </div>
 
-              <div className="form-checkbox">
-                <input type="checkbox" id="uso-dados" name="uso-dados" required />
-                <label htmlFor="uso-dados">
-                  Li e concordo com o uso dos meus dados conforme descrito acima.
-                </label>
-              </div>
+                  <div className="form-checkbox">
+                    <input type="checkbox" id="uso-dados" name="uso-dados" required />
+                    <label htmlFor="uso-dados">
+                      Li e concordo com o uso dos meus dados conforme descrito acima.
+                    </label>
+                  </div>
 
-              <div className="form-checkbox">
-                <input type="checkbox" id="termos" name="termos" required />
-                <label htmlFor="termos">
-                  Li e concordo com os <a href="https://mentto.com.br/termos-de-uso-e-politicas-de-privacidade" className="link-termos" target="_blank">termos e Políticas de Privacidade</a>
-                </label>
-              </div>
+                  <div className="form-checkbox">
+                    <input type="checkbox" id="termos" name="termos" required />
+                    <label htmlFor="termos">
+                      Li e concordo com os <a href="https://mentto.com.br/termos-de-uso-e-politicas-de-privacidade" className="link-termos" target="_blank">termos e Políticas de Privacidade</a>
+                    </label>
+                  </div>
 
-              {success && <p className="success-message">Inscrição realizada com sucesso!</p>}
-              {error && <p className="error-message">{error}</p>}
+                  {success && <p className="success-message">Inscrição realizada com sucesso!</p>}
+                  {error && <p className="error-message">{error}</p>}
 
-              <button type="submit" className="form-submit" disabled={loading}>
-                {loading ? 'ENVIANDO...' : 'ENVIAR'}
-              </button>
-            </form>
+                  <button type="submit" className="form-submit" disabled={loading}>
+                    {loading ? 'ENVIANDO...' : 'ENVIAR'}
+                  </button>
+                </form>
+              </>
+            ) : (
+              <p className="inscription-subtitle">(Em breve)</p>
+            )}
           </div>
         </section>
 

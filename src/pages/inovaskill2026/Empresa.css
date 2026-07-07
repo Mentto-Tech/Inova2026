@@ -93,8 +93,12 @@ body:has(.empresa-hero) .empresa-inscription {
 .empresa-hero-left .logo-top {
   height: 40px;
   margin-bottom: 0.25rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   align-self: flex-start;
+}
+
+.empresa-hero-left .hyphen-separator-city-adjusted {
+  margin-top: 1.3rem;
 }
 
 .empresa-hero-left h1 {
