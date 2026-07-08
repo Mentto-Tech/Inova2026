@@ -89,7 +89,7 @@
 }
 
 .organizer-logo-hero.bauru-logo {
-    margin-top: 3px; 
+    margin-top: 3px;
 }
 
 /* Cronograma styles */
@@ -99,7 +99,8 @@
     align-items: center;
     margin-top: 1.5rem;
     padding: 0 1rem;
-    margin-bottom: 0.75rem; /* espaço entre imagem e botão */
+    margin-bottom: 0.75rem;
+    /* espaço entre imagem e botão */
 }
 
 .cronograma-image {
@@ -124,12 +125,15 @@
 
 /* Ajustes de espaçamento entre botão e próxima seção */
 .important-dates-container {
-    padding-bottom: 0.75rem; /* reduz espaço abaixo do bloco de datas */
+    padding-bottom: 0.75rem;
+    /* reduz espaço abaixo do bloco de datas */
 }
 
 .important-dates-container .cta-dates {
-    margin-top: 2rem; /* aumenta distância entre imagem e botão */
-    margin-bottom: 1rem; /* reduz distância até a próxima seção */
+    margin-top: 2rem;
+    /* aumenta distância entre imagem e botão */
+    margin-bottom: 1rem;
+    /* reduz distância até a próxima seção */
 }
 
 @media (max-width: 900px) {

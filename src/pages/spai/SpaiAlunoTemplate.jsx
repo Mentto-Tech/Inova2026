@@ -210,7 +210,7 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
           </div>
         </section >
 
-        <section className="aluno-bolsa animate-fade-in-up" ref={bolsaRef}>
+        {/* <section className="aluno-bolsa animate-fade-in-up" ref={bolsaRef}>
           <div className="aluno-bolsa-container">
             <h2>Bolsa Pesquisa para Alunos</h2>
             <p className="aluno-bolsa-intro">
@@ -235,7 +235,7 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className='datasbolsatrilha animate-fade-in-up' ref={trilhasRef}>
           <img src={trilhas2} alt="Trilhas" />
