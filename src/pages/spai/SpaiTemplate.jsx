@@ -202,7 +202,7 @@ export default function SpaiTemplate({ city }) {
 
         <section className="inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
           <div className="inscription-container">
-            <h2>Entenda um pouco mais sobre essa iniciativa ({city})</h2>
+            <h2>Entenda um pouco mais sobre essa iniciativa ({city === 'Araçatuba' ? 'InovaSkill - CITA' : city})</h2>
             <p className="inscription-subtitle">Saiba mais sobre a estrutura dos times do programa</p>
 
             <div className="inscription-cards">
