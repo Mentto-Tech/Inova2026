@@ -47,7 +47,7 @@ export default function SpaiEmpresaTemplate({ city, groupId }) {
     ramo: '',
     cidade: city || '',
     porte: '',
-    associada: '',
+    associada: 'Nenhum',
   })
 
   const [loading, setLoading] = useState(false)
@@ -97,7 +97,7 @@ export default function SpaiEmpresaTemplate({ city, groupId }) {
         ramo: '',
         cidade: city || '',
         porte: '',
-        associada: '',
+        associada: 'Nenhum',
       })
     } catch (err) {
       setError(err.message || 'Ocorreu um erro ao enviar os dados da empresa. Tente novamente.')
@@ -215,9 +215,7 @@ export default function SpaiEmpresaTemplate({ city, groupId }) {
                     <label htmlFor="cidade">Cidade:</label>
                     <input type="text" id="cidade" name="cidade" value={formData.cidade} readOnly required />
                   </div>
-                </div>
 
-                <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="porte">Porte da empresa:</label>
                     <select id="porte" name="porte" value={formData.porte} onChange={handleChange} required >
@@ -229,16 +227,16 @@ export default function SpaiEmpresaTemplate({ city, groupId }) {
                     </select>
                   </div>
 
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <label htmlFor="associada">Associada a:</label>
                     <select id="associada" name="associada" value={formData.associada} onChange={handleChange} required >
                       <option value="">Selecione</option>
-                      {/* <option value="CIESP">CIESP</option>
+                      <option value="CIESP">CIESP</option>
                       <option value="ADIPA">ADIPA</option>
-                      <option value="ASSERTI">ASSERTI</option> */}
+                      <option value="ASSERTI">ASSERTI</option>
                       <option value="Nenhum">Nenhum</option>
                     </select>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="form-checkbox-empresa">

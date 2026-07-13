@@ -22,6 +22,7 @@ import icon3 from '../../assets/icones/image 393.svg'
 import icon4 from '../../assets/icones/image 394.svg'
 import icon5 from '../../assets/icones/image 395.svg'
 import editalPdf from '../../assets/pdf/Edital_InnovaSkill2026.pdf'
+import editalCitaPdf from '../../editais/Edital_InnovaSkill_CITA_2026.pdf'
 import predioIcon from '../../assets/icones/predio.svg'
 import chapeuIcon from '../../assets/icones/chapeu.png'
 
@@ -91,9 +92,9 @@ export default function SpaiTemplate({ city }) {
             </div>
 
             <div className="feature-item">
-              <img src={Icon2} alt="Duração de 6 meses" className="feature-icon" />
+              <img src={Icon2} alt={city === 'Araçatuba' ? "Duração de 4 meses" : "Duração de 6 meses"} className="feature-icon" />
               <div>
-                <div className="feature-title">Duração de 6 meses</div>
+                <div className="feature-title">{city === 'Araçatuba' ? 'Duração de 4 meses' : 'Duração de 6 meses'}</div>
               </div>
             </div>
 
@@ -108,7 +109,7 @@ export default function SpaiTemplate({ city }) {
               <img src={Icon4} alt="Gratuito" className="feature-icon" />
               <div>
                 <div className="feature-title">100% gratuito</div>
-                <div className="feature-title">para alunos</div>
+                <div className="feature-title">para alunos e empresas</div>
               </div>
             </div>
           </div>
@@ -159,7 +160,7 @@ export default function SpaiTemplate({ city }) {
                 <div className="cronograma-container">
                   <img src={cronogramaAracatuba} alt="Cronograma Araçatuba" className="cronograma-image" />
                 </div>
-                <a className="cta cta-dates" href={editalPdf} download="Edital_InnovaSkill2026.pdf">Clique aqui para acessar o edital</a>
+                <a className="cta cta-dates" href={editalCitaPdf} download="Edital_InnovaSkill_CITA_2026.pdf">Clique aqui para acessar o edital</a>
               </>
             ) : (
               <>
@@ -178,7 +179,7 @@ export default function SpaiTemplate({ city }) {
             <div className="how-it-works-content">
               <h2>Como vai Funcionar:</h2>
               <ul className="how-it-works-list">
-                <li>Duração de 6 meses;</li>
+                <li>{city === 'Araçatuba' ? 'Duração de 4 meses;' : 'Duração de 6 meses;'}</li>
                 <li>Conteúdos dinâmicos;</li>
                 <li>Webinars com cases de sucesso;</li>
                 <li>Atividades práticas;</li>

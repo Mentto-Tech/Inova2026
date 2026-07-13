@@ -120,13 +120,13 @@ export default function Home() {
               <p>Instrumentalização de metodologias de  inovação a partir de pesquisas aplicadas, fomentando e apoiando  projetos com potencial de geração de empreendimentos de base científica e tecnológica (deep techs).</p>
             </div>
 
-            <div className="feature-card highlight-card">
+            {/* <div className="feature-card highlight-card">
               <div className="feature-icon-wrapper green-glow">
                 <img src={Icon4} alt="Gratuito" />
               </div>
               <h3>100% Gratuito</h3>
               <p>Acesso totalmente livre para os alunos</p>
-            </div>
+            </div> */}
           </div>
         </section>
 

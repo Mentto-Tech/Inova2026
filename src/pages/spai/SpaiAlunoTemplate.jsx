@@ -17,6 +17,7 @@ import icon3 from '../../assets/icones/image 393.svg'
 import icon4 from '../../assets/icones/image 394.svg'
 import icon5 from '../../assets/icones/image 395.svg'
 import editalPdf from '../../assets/pdf/Edital_InnovaSkill2026.pdf'
+import editalCitaPdf from '../../editais/Edital_InnovaSkill_CITA_2026.pdf'
 import cronogramaAracatuba from '../../assets/Cronogramas/cronogramaAracatuba.png'
 
 const digitsOnly = (value = '') => value.replace(/\D+/g, '')
@@ -199,7 +200,7 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
                 <div className="cronograma-container">
                   <img src={cronogramaAracatuba} alt="Cronograma Araçatuba" className="cronograma-image" />
                 </div>
-                <a className="cta cta-dates" href={editalPdf} target="_blank" rel="noopener noreferrer">Clique aqui para acessar o edital</a>
+                <a className="cta cta-dates" href={editalCitaPdf} target="_blank" rel="noopener noreferrer">Clique aqui para acessar o edital</a>
               </>
             ) : (
               <>

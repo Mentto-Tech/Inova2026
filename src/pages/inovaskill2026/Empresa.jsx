@@ -46,7 +46,7 @@ export default function Empresa() {
     ramo: '',
     cidade: '',
     porte: '',
-    associada: '',
+    associada: 'Nenhum',
   })
 
   const [loading, setLoading] = useState(false)
@@ -108,12 +108,6 @@ export default function Empresa() {
       return
     }
 
-    if (!sanitized.associada) {
-      setError('Selecione a associação.')
-      setLoading(false)
-      return
-    }
-
     try {
       await subscribeEmpresa(sanitized)
       setSuccess(true)
@@ -126,7 +120,7 @@ export default function Empresa() {
         ramo: '',
         cidade: '',
         porte: '',
-        associada: '',
+        associada: 'Nenhum',
       })
     } catch (err) {
       setError(err.message || 'Ocorreu um erro ao enviar os dados da empresa. Tente novamente.')
