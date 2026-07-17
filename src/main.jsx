@@ -33,7 +33,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/spai-bauru" element={<Bauru />} />
         <Route path="/spai-bauru/aluno" element={<SpaiAlunoTemplate city="Bauru" groupId="191264125301556842" />} />
         <Route path="/spai-bauru/empresa" element={<SpaiEmpresaTemplate city="Bauru" groupId="191264210036983690" />} />
-        <Route path="/spai-bauru/pesquisador" element={<SpaiPesquisadorTemplate city="Bauru" groupId="191264125301556842" />} />
+        <Route path="/spai-bauru/pesquisador" element={<SpaiPesquisadorTemplate city="Bauru" groupId="193260399107245905" />} />
 
         {/* <Route path="/spai-famema" element={<Famema />} /> */}
         {/* <Route path="/spai-famema/aluno" element={<SpaiAlunoTemplate city="Famema" />} /> */}
