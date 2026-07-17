@@ -942,6 +942,17 @@ body:has(.empresa-hero) #root {
   box-shadow: 0 0 60px rgba(0, 255, 0, 0.6), inset 0 0 30px rgba(0, 255, 0, 0.2);
 }
 
+.card-pesquisador {
+  border-color: #a855f7;
+  background-color: #21002d;
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.4), inset 0 0 20px rgba(168, 85, 247, 0.1);
+}
+
+.card-pesquisador:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 60px rgba(168, 85, 247, 0.6), inset 0 0 30px rgba(168, 85, 247, 0.2);
+}
+
 .inscription-card .card-label {
   font-size: 0.95rem;
   color: var(--text-primary);

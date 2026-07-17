@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import citapLogo from '../../assets/inovaskill/citap.png';
 
-const Footer = ({ organizerLogo, showCitap }) => {
+const Footer = ({ organizerLogo, showCitap, showFundunesp }) => {
   const isInovaSkill2026 = window.location.pathname.includes('/inovaskill2026');
 
   return (
@@ -13,6 +13,11 @@ const Footer = ({ organizerLogo, showCitap }) => {
           <div className="citap-logo-box">
             <img src="/fundacao-logo.png" alt="Fundação" className="citap-logo-footer" />
           </div>
+          {showFundunesp && (
+            <div className="citap-logo-box">
+              <img src="/logoFundunesp.jpeg" alt="Fundunesp" className="citap-logo-footer" />
+            </div>
+          )}
           {(isInovaSkill2026 || showCitap) && (
             <div className="citap-logo-box">
               <img src={citapLogo} alt="CITAP" className="citap-logo-footer" />

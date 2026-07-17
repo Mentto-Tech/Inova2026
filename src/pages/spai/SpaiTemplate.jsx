@@ -92,9 +92,9 @@ export default function SpaiTemplate({ city }) {
             </div>
 
             <div className="feature-item">
-              <img src={Icon2} alt={city === 'Araçatuba' ? "Duração de 4 meses" : "Duração de 6 meses"} className="feature-icon" />
+              <img src={Icon2} alt="Duração de 4 meses" className="feature-icon" />
               <div>
-                <div className="feature-title">{city === 'Araçatuba' ? 'Duração de 4 meses' : 'Duração de 6 meses'}</div>
+                <div className="feature-title">Duração de 4 meses</div>
               </div>
             </div>
 
@@ -118,8 +118,21 @@ export default function SpaiTemplate({ city }) {
         <section className="stats animate-fade-in-up" ref={statsRef}>
           <div className="stats-container">
             <p className="stats-intro">
-              <strong>Programa de inovação aberta que conecta empresas e estudantes para <span className="accent">desenvolver
-                soluções tecnológicas e de negócio</span> voltadas a <span className="accent">desafios reais do mercado</span></strong>
+              <strong>
+                {city === 'Bauru' ? (
+                  <>
+                    Programa de inovação aberta que conecta empresas, pesquisadores e estudantes para{' '}
+                    <span className="accent">desenvolver soluções tecnológicas e de negócio</span> voltadas a{' '}
+                    <span className="accent">desafios reais do mercado</span>
+                  </>
+                ) : (
+                  <>
+                    Programa de inovação aberta que conecta empresas e estudantes para{' '}
+                    <span className="accent">desenvolver soluções tecnológicas e de negócio</span> voltadas a{' '}
+                    <span className="accent">desafios reais do mercado</span>
+                  </>
+                )}
+              </strong>
             </p>
 
             {/*
@@ -179,12 +192,16 @@ export default function SpaiTemplate({ city }) {
             <div className="how-it-works-content">
               <h2>Como vai Funcionar:</h2>
               <ul className="how-it-works-list">
-                <li>{city === 'Araçatuba' ? 'Duração de 4 meses;' : 'Duração de 6 meses;'}</li>
+                <li>Duração de 4 meses;</li>
                 <li>Conteúdos dinâmicos;</li>
                 <li>Webinars com cases de sucesso;</li>
                 <li>Atividades práticas;</li>
                 <li>Suporte especializado durante todo o programa;</li>
-                <li>Desenvolvimento de projetos de empreendedorismo ou inovação aberta;</li>
+                <li>
+                  {city === 'Bauru'
+                    ? 'Desenvolvimento de projetos de empreendedorismo e inovação aberta a partir de desafios de negócio ou pesquisa científica;'
+                    : 'Desenvolvimento de projetos de empreendedorismo ou inovação aberta;'}
+                </li>
                 <li>Mentoria durante o desenvolvimento do projeto;</li>
                 <li>Material de apoio e complementar.</li>
               </ul>
@@ -213,8 +230,20 @@ export default function SpaiTemplate({ city }) {
                 <span className="card-button">CLIQUE AQUI</span>
               </Link>
 
+              {city === 'Bauru' && (
+                <Link to={`/spai-${city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}/pesquisador`} className="inscription-card card-pesquisador">
+                  <h3>PESQUISADOR</h3>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="card-icon" style={{ padding: '15px', boxSizing: 'border-box' }}>
+                    <circle cx="12" cy="12" r="2" />
+                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(45 12 12)" />
+                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-45 12 12)" />
+                  </svg>
+                  <span className="card-button">CLIQUE AQUI</span>
+                </Link>
+              )}
+
               <Link to={`/spai-${city.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}/aluno`} className="inscription-card card-aluno">
-                <h3>ALUNO</h3>
+                <h3>{city === 'Bauru' ? 'ESTUDANTE' : 'ALUNO'}</h3>
                 <img src={chapeuIcon} alt="Aluno" className="card-icon" />
                 <span className="card-button">CLIQUE AQUI</span>
               </Link>
@@ -224,6 +253,7 @@ export default function SpaiTemplate({ city }) {
 
         <Footer
           organizerLogo={cityData[city]?.logo}
+          showFundunesp
         />
       </div >
     </>

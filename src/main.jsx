@@ -13,6 +13,7 @@ import Bauru from './pages/spai/Bauru.jsx'
 import Assis from './pages/spai/Assis.jsx'
 import SpaiAlunoTemplate from './pages/spai/SpaiAlunoTemplate.jsx'
 import SpaiEmpresaTemplate from './pages/spai/SpaiEmpresaTemplate.jsx'
+import SpaiPesquisadorTemplate from './pages/spai/SpaiPesquisadorTemplate.jsx'
 import PageLoader from './components/PageLoader.jsx'
 
 createRoot(document.getElementById('root')).render(
@@ -32,6 +33,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/spai-bauru" element={<Bauru />} />
         <Route path="/spai-bauru/aluno" element={<SpaiAlunoTemplate city="Bauru" groupId="191264125301556842" />} />
         <Route path="/spai-bauru/empresa" element={<SpaiEmpresaTemplate city="Bauru" groupId="191264210036983690" />} />
+        <Route path="/spai-bauru/pesquisador" element={<SpaiPesquisadorTemplate city="Bauru" groupId="191264125301556842" />} />
 
         {/* <Route path="/spai-famema" element={<Famema />} /> */}
         {/* <Route path="/spai-famema/aluno" element={<SpaiAlunoTemplate city="Famema" />} /> */}

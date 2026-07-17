@@ -36,7 +36,7 @@ export default function SpaiEmpresaTemplate({ city, groupId }) {
   const heroRef = useScrollAnimation()
   const inscriptionRef = useScrollAnimation()
   const trilhasRef = useScrollAnimation()
-  const showEnrollmentForm = !['Bauru', 'Assis'].includes(city)
+  const showEnrollmentForm = !['Assis'].includes(city)
 
   const [formData, setFormData] = useState({
     nome: '',
@@ -262,6 +262,7 @@ export default function SpaiEmpresaTemplate({ city, groupId }) {
 
       <Footer
         organizerLogo={cityData[city]?.logo}
+        showFundunesp
       />
     </>
   )

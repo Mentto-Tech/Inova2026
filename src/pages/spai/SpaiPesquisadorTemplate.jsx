@@ -49,27 +49,27 @@ const sanitizeAluno = (data) => ({
   email: data.email.trim(),
   telefone: data.telefone.trim(),
   instituicao: data.instituicao.trim(),
-  curso: data.curso.trim(),
-  termo: data.termo.trim(),
+  // curso: data.curso.trim(),
+  // termo: data.termo.trim(),
   cidade: data.cidade.trim(),
   cpf: data.cpf.trim(),
 })
 
-export default function SpaiAlunoTemplate({ city, groupId }) {
+export default function SpaiPesquisadorTemplate({ city, groupId }) {
   const heroRef = useScrollAnimation()
   const datesRef = useScrollAnimation()
   const bolsaRef = useScrollAnimation()
   const trilhasRef = useScrollAnimation()
   const inscriptionRef = useScrollAnimation()
-  const showEnrollmentForm = !['Assis'].includes(city)
+  const showEnrollmentForm = !['Bauru', 'Assis'].includes(city) || city === 'Bauru'
 
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
     telefone: '',
     instituicao: '',
-    curso: '',
-    termo: '',
+    // curso: '',
+    // termo: '',
     cidade: city || '',
     cpf: '',
   })
@@ -123,8 +123,8 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
         email: '',
         telefone: '',
         instituicao: '',
-        curso: '',
-        termo: '',
+        // curso: '',
+        // termo: '',
         cidade: city || '',
         cpf: '',
       })
@@ -161,12 +161,10 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
               </span>
             </div>
             <h1 className='h1-title'>
-              Torne-se um <span className="accent">Agente
+              Torne-se um <span className="accent">Pesquisador
                 <br /> Protagonista</span> de
               <br /> Transformação!
             </h1>
-
-
 
             <p className="lead">
               Desenvolva competências em <strong>empreendedorismo
@@ -211,40 +209,13 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
           </div>
         </section >
 
-        {/* <section className="aluno-bolsa animate-fade-in-up" ref={bolsaRef}>
-          <div className="aluno-bolsa-container">
-            <h2>Bolsa Pesquisa para Alunos</h2>
-            <p className="aluno-bolsa-intro">
-              Os participantes do <strong>InovaSkill SPAI {city}</strong> terão a oportunidade de concorrer a uma <strong>bolsa pesquisa de R$600,00</strong> por mês nos <strong>quatro meses finais do programa.</strong>
-            </p>
-
-            <div className="aluno-bolsa-content">
-              <div className="aluno-bolsa-left">
-                <img src={bolsa} alt="Bolsa Pesquisa" />
-              </div>
-
-              <div className="aluno-bolsa-right">
-                <h3>Processo de seleção da bolsa de pesquisa:</h3>
-                <p>A bolsa será concedida aos alunos que demonstrarem <strong>bom engajamento</strong> ao longo do programa. Isso significa:</p>
-
-                <ul className="aluno-bolsa-list">
-                  <br />
-                  <li><strong>Participação ativa</strong> nos encontros presenciais e online;</li>
-                  <li><strong>Contribuição efetiva com seu squad</strong> e no desenvolvimento do projeto;</li>
-                  <li><strong>Comprometimento com as atividades e entregas</strong> do programa.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         <section className='datasbolsatrilha animate-fade-in-up' ref={trilhasRef}>
           <img src={trilhas2} alt="Trilhas" />
         </section>
 
         <section className="aluno-inscription animate-fade-in-up" ref={inscriptionRef} id="inscription">
           <div className="aluno-inscription-container">
-            <h2>Faça sua Pré-Inscrição no InovaSkill em {city}:</h2>
+            <h2>Faça sua Pré-Inscrição como Pesquisador no InovaSkill em {city}:</h2>
             {showEnrollmentForm ? (
               <>
                 <p className="inscription-subtitle">Todos os campos são obrigatórios</p>
@@ -272,7 +243,7 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
                     </div>
                   </div>
 
-                  <div className="form-row">
+                  {/* <div className="form-row">
                     <div className="form-group">
                       <label htmlFor="curso">Curso:</label>
                       <input type="text" id="curso" name="curso" value={formData.curso} onChange={handleChange} required />
@@ -281,7 +252,7 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
                       <label htmlFor="termo">Termo:</label>
                       <input type="text" id="termo" name="termo" value={formData.termo} onChange={handleChange} required />
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="form-row">
                     <div className="form-group">
@@ -310,7 +281,7 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
                   <div className="form-checkbox">
                     <input type="checkbox" id="termos" name="termos" required />
                     <label htmlFor="termos">
-                      Li e concordo com os <a href="https://mentto.com.br/termos-de-uso-e-politicas-de-privacidade" className="link-termos" target="_blank">termos e Políticas de Privacidade</a>
+                      Li e concordo com os <a href="https://mentto.com.br/termos-de-uso-e-politicas-de-privacidade" className="link-termos" target="_blank" rel="noreferrer">termos e Políticas de Privacidade</a>
                     </label>
                   </div>
 
@@ -332,7 +303,7 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
           organizerLogo={cityData[city]?.logo}
           showFundunesp
         />
-      </div >
+      </div>
     </>
   )
 }
