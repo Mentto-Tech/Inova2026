@@ -300,6 +300,12 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
                     <p>O CPF é solicitado exclusivamente para fins de identificação do participante, formalização da participação no programa e cumprimento de exigências institucionais relacionadas à bolsa e/ou certificação. Os dados serão tratados conforme a Lei Geral de Proteção de Dados (LGPD) e não serão utilizados para fins comerciais.</p>
                   </div>
 
+                  <div className="lgpd-notice">
+                    <p>
+                      <strong>Informações sobre seus dados:</strong> Seus dados serão gerenciados pela plataforma <strong>MailerLite</strong>, nosso operador de comunicações, em conformidade com a LGPD. Os dados serão retidos pelo período de vigência do programa e por até <strong>5 anos</strong> após seu encerramento para fins de certificação e obrigações legais. Para exercer seus direitos (acesso, correção ou exclusão), entre em contato pelo e-mail{' '}<a href="mailto:lgpd@mentto.com.br">lgpd@mentto.com.br</a>.
+                    </p>
+                  </div>
+
                   <div className="form-checkbox">
                     <input type="checkbox" id="uso-dados" name="uso-dados" required />
                     <label htmlFor="uso-dados">

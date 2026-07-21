@@ -418,6 +418,31 @@
   margin: 0;
 }
 
+.lgpd-notice {
+  background: rgba(255, 200, 50, 0.05);
+  border-left: 3px solid rgba(255, 200, 50, 0.6);
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+}
+
+.lgpd-notice p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.lgpd-notice a {
+  color: rgba(255, 200, 50, 0.9);
+  text-decoration: none;
+}
+
+.lgpd-notice a:hover {
+  text-decoration: underline;
+}
+
+
 .form-checkbox {
   display: flex;
   align-items: flex-start;
