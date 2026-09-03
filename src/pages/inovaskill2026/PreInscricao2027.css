@@ -1,0 +1,112 @@
+.pre-inscricao-section {
+  background: var(--bg);
+  padding: 4rem 2rem;
+  color: var(--text-primary);
+}
+
+.pre-inscricao-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pre-inscricao-container h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+}
+
+.pre-inscricao-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: left;
+}
+
+.radio-group {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 0.4rem 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.radio-option input[type='radio'] {
+  accent-color: var(--cyan);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Success */
+.pre-inscricao-success {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.pre-inscricao-success h3 {
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.pre-inscricao-success p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+/* Submit */
+.pre-inscricao-submit {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.pre-inscricao-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 900px) {
+  .pre-inscricao-container {
+    width: 90%;
+  }
+
+  .pre-inscricao-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .pre-inscricao-section {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pre-inscricao-section {
+    padding: 2rem 1rem;
+  }
+
+  .pre-inscricao-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .radio-group {
+    gap: 1rem;
+  }
+}

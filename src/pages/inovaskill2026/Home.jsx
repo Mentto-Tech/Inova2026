@@ -65,7 +65,7 @@ export default function Home() {
               Nesta edição do Programa, <strong>empresas e indústrias da Alta Paulista e alunos da Fatec Pompeia</strong> estão desenvolvendo soluções tecnológicas voltadas a <strong>desafios reais do mercado</strong>.
             </p>
 
-            <a className="cta" href="#inscription">Saiba mais</a>
+            <Link className="cta" to="/inovaskill2026/pre-inscricao-2027">Pré inscrição InovaSkill 2027</Link>
           </div>
 
           <div className="hero-right">

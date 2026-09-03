@@ -7,6 +7,7 @@ import HomeNovo from './Home.jsx'
 import HomeInovaSkill2026 from './pages/inovaskill2026/Home.jsx'
 import Aluno from './pages/inovaskill2026/Aluno.jsx'
 import Empresa from './pages/inovaskill2026/Empresa.jsx'
+import PreInscricao2027 from './pages/inovaskill2026/PreInscricao2027.jsx'
 import Aracatuba from './pages/spai/Aracatuba.jsx'
 import Bauru from './pages/spai/Bauru.jsx'
 // import Famema from './pages/spai/Famema.jsx'
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/inovaskill2026" element={<HomeInovaSkill2026 />} />
         <Route path="/inovaskill2026/aluno" element={<Aluno />} />
         <Route path="/inovaskill2026/empresa" element={<Empresa />} />
+        <Route path="/inovaskill2026/pre-inscricao-2027" element={<PreInscricao2027 />} />
 
         <Route path="/spai-aracatuba" element={<Aracatuba />} />
         <Route path="/spai-aracatuba/aluno" element={<SpaiAlunoTemplate city="Araçatuba" groupId="191263880560772146" />} />
