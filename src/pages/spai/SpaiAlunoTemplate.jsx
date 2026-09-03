@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
+import CopyEmail from '../../components/CopyEmail'
 import Footer from '../../components/Footer/Footer'
 import { cityData } from '../../constants/cityData'
 import '../inovaskill2026/Inovaskill2026.css'
@@ -302,7 +303,7 @@ export default function SpaiAlunoTemplate({ city, groupId }) {
 
                   <div className="lgpd-notice">
                     <p>
-                      <strong>Informações sobre seus dados:</strong> Seus dados serão gerenciados pela plataforma <strong>MailerLite</strong>, nosso operador de comunicações, em conformidade com a LGPD. Os dados serão retidos pelo período de vigência do programa e por até <strong>5 anos</strong> após seu encerramento para fins de certificação e obrigações legais. Para exercer seus direitos (acesso, correção ou exclusão), entre em contato pelo e-mail{' '}<a href="mailto:lgpd@mentto.com.br">lgpd@mentto.com.br</a>.
+                      <strong>Informações sobre seus dados:</strong> Seus dados serão gerenciados pela plataforma <strong>MailerLite</strong>, nosso operador de comunicações, em conformidade com a LGPD. Os dados serão retidos pelo período de vigência do programa e por até <strong>5 anos</strong> após seu encerramento para fins de certificação e obrigações legais. Para exercer seus direitos (acesso, correção ou exclusão), entre em contato pelo e-mail: <CopyEmail email="lgpd@mentto.com.br" />
                     </p>
                   </div>
 

@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import './Inovaskill2026.css'
 import './PreInscricao2027.css'
+import CopyEmail from '../../components/CopyEmail'
 
 const GROUP_ID = '197593284253582923'
 
@@ -185,8 +186,8 @@ export default function PreInscricao2027() {
                     <strong>Informações sobre seus dados:</strong> Seus dados serão gerenciados pela plataforma MailerLite,
                     nosso operador de comunicações, em conformidade com a LGPD. Os dados serão retidos pelo período de
                     vigência do programa e por até 5 anos após seu encerramento para fins de certificação e obrigações
-                    legais. Para exercer seus direitos (acesso, correção ou exclusão), entre em contato pelo e-mail{' '}
-                    <a href="mailto:lgpd@mentto.com.br" className="link-termos">lgpd@mentto.com.br</a>.
+                    legais. Para exercer seus direitos (acesso, correção ou exclusão), entre em contato pelo e-mail:{' '}
+                    <CopyEmail email="lgpd@mentto.com.br" />
                   </p>
                 </div>
 
